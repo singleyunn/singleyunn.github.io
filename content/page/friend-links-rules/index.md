@@ -1,22 +1,28 @@
 ---
-title: Backlink Rules
+title: Friend-link rules
 slug: friend-links-rules
-description: A reusable policy template for friendly link exchanges.
+description: The basic terms for exchanging links with independent sites.
 comments: false
 license: false
 ---
 
-This is a generic template for an independent site's backlink policy. Replace the criteria, contact method, and site details before enabling applications.
+These are the basic terms for exchanging links with this site. The goal is not to add unnecessary barriers, but to make clear what a link is expected to point to over time.
 
 ## Basic requirements
 
-- Link only to accessible, actively maintained sites with original content.
-- Do not accept malicious, deceptive, illegal, or spam-focused sites.
-- State whether reciprocal links are required and how requests are reviewed.
+- The site should be accessible and maintained over time.
+- It should mainly contain original writing, personal notes, or an independent project.
+- Sites focused on abuse, fraud, illegal activity, infringement, or spam will not be accepted.
+- The site name, URL, and description should be accurate and clear.
 
-## Your site details
+## How to apply
 
-- Name: Your site name
-- Website: `https://example.com/`
-- Avatar: `https://example.com/img/avatar.png`
-- RSS: `https://example.com/index.xml`
+Email [xizhiyun1995@gmail.com](mailto:xizhiyun1995@gmail.com?subject=Friend-link%20request) with:
+
+- the site name and URL;
+- a short description;
+- an avatar or site icon;
+- an optional RSS feed;
+- whether you are open to a reciprocal link.
+
+I will reply after checking the site content and maintenance status. Reciprocal links are discussed case by case; a link may be temporarily removed if a site becomes unavailable or changes substantially.

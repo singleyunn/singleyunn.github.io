@@ -1,6 +1,7 @@
 ---
 title: 链接
-description: 可复用的链接与友链交换页面。
+slug: links
+description: 我的博客、代码仓库、公开社交入口与友链。
 comments: false
 license: false
 toc: false
@@ -9,34 +10,43 @@ menu:
     weight: -50
     params: { icon: link }
 links:
+  - title: 博客主页
+    description: 碳基漫游 AI 的中文主页。
+    website: https://xizhiyun1995-netizen.github.io/zh/
+    image: /img/avatar.jpg
   - title: GitHub
-    description: 将这里替换为你的公开代码与项目主页。
-    website: https://github.com/your-account
+    description: 我的代码仓库与博客源码。
+    website: https://github.com/xizhiyun1995-netizen
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: X
+    description: 在 X 上关注我的公开动态。
+    website: https://x.com/Singlea8uw
+  - title: 邮箱
+    description: 公开联系邮箱。
+    website: mailto:xizhiyun1995@gmail.com
 linkhub:
-  label: 我的空间
-  title: 找到这个项目
-  description: 请将这些通用示例替换为你自己的公开平台。
+  label: 我的链接
+  title: 找到我
+  description: 这里整理了我的博客、代码仓库和公开社交入口。
 friendlinks:
   label: 友链
   title: 友链
-  description: 你希望推荐的独立网站和项目。
-  emptyTitle: 等待第一位邻居
-  emptyDescription: 在 data/friend-links/ 中加入通用示例。
-  requestTitle: 申请友链
-  requestDescription: 先阅读规则，再打开演示表单或复制一份表单模板。
-  rulesPrompt: 申请前请阅读
+  description: 我愿意推荐和交换的独立网站与项目。
+  emptyTitle: 等待下一位邻居
+  emptyDescription: 这里会展示我认可并愿意推荐的独立网站或项目。
+  requestTitle: 申请交换友链
+  requestDescription: 如果你也有持续维护的独立网站，可以先阅读友链规则，再通过邮箱联系我。
+  rulesPrompt: 交换前请阅读
   rulesTitle: 友链规则
-  rulesDescription: 为你自己的网站设置交换条款。
+  rulesDescription: 了解本站的基本交换条件。
   rulesCTA: 阅读规则
   rulesURL: friend-links-rules/
-  cta: 打开演示表单
-  ctaURL: https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u
-  emailCTA: 复制此表单模板
-  emailURL: https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u&sharetoken=TnsZOZAtRpQBsNnIX6GA
-  applicationTitle: 友链申请演示
-  applicationDescription: 此表单只用于界面参考，填写内容不会进入正式友链审核或本站数据库。请勿填写真实敏感信息。喜欢此模板时，可以使用上方链接复制一份并连接到自己的流程。
-  applicationURL: https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u
+  cta: 邮件联系
+  ctaURL: mailto:xizhiyun1995@gmail.com?subject=申请交换友链
+  emailCTA: 发送邮件
+  emailURL: mailto:xizhiyun1995@gmail.com?subject=申请交换友链
+  applicationTitle: 友链申请
+  applicationDescription: 请在邮件中附上网站名称、网址、简介、头像和可选的 RSS 地址，并说明是否愿意互链。
 ---
 
-此页面演示 Liquid Stack 的链接中心、友链卡片、规则页与 Microsoft Forms 申请流程。演示填写不会被本站记录或用于正式审核。复制表单模板后，请替换站点信息、隐私说明和通知设置。
+这里整理我的公开入口，也记录我愿意推荐的独立网站和项目。暂时没有接入第三方表单，友链申请请直接发送邮件。

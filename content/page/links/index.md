@@ -1,6 +1,6 @@
 ---
 title: Links
-description: A reusable links and backlink-exchange page.
+description: My blog, code, public social links, and recommended sites.
 comments: false
 license: false
 toc: false
@@ -9,34 +9,43 @@ menu:
     weight: -50
     params: { icon: link }
 links:
+  - title: Blog
+    description: The Chinese homepage of Carbon Roaming AI.
+    website: https://xizhiyun1995-netizen.github.io/zh/
+    image: /img/avatar.jpg
   - title: GitHub
-    description: Replace this with your public code and project profile.
-    website: https://github.com/your-account
+    description: My code repositories and blog source.
+    website: https://github.com/xizhiyun1995-netizen
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: X
+    description: Follow my public updates on X.
+    website: https://x.com/Singlea8uw
+  - title: Email
+    description: Public contact email.
+    website: mailto:xizhiyun1995@gmail.com
 linkhub:
-  label: My Spaces
-  title: Find this project
-  description: Replace these generic entries with your own public platforms.
+  label: My links
+  title: Find me
+  description: A small collection of my blog, code, and public social links.
 friendlinks:
-  label: Backlinks
-  title: Backlinks
-  description: Independent sites and projects you want to recommend.
-  emptyTitle: There is room for the first neighbor
-  emptyDescription: Add a generic entry under data/friend-links/.
-  requestTitle: Request a backlink
-  requestDescription: Read the rules, then open the demo form or copy the reusable form template.
-  rulesPrompt: Please read before applying
-  rulesTitle: Backlink Rules
-  rulesDescription: Configure the exchange terms for your own site.
+  label: Friend links
+  title: Friend links
+  description: Independent sites and projects I recommend or exchange links with.
+  emptyTitle: Waiting for the next neighbor
+  emptyDescription: This space is for independent sites and projects I am happy to recommend.
+  requestTitle: Request a friend link
+  requestDescription: If you maintain an independent site, read the rules first and then contact me by email.
+  rulesPrompt: Read before exchanging
+  rulesTitle: Friend-link rules
+  rulesDescription: The basic conditions for an exchange with this site.
   rulesCTA: Read the rules
   rulesURL: friend-links-rules/
-  cta: Open demo form
-  ctaURL: https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u
-  emailCTA: Copy this form template
-  emailURL: https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u&sharetoken=TnsZOZAtRpQBsNnIX6GA
-  applicationTitle: Backlink Application Demo
-  applicationDescription: This form is provided as an interface reference. Entries do not enter a formal backlink review or this site's database. Do not provide real sensitive information. If you like the template, use the link above to create your own copy and connect it to your workflow.
-  applicationURL: https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUQ0sxMlZYNVA0OTZIQTMySkxLVjdXTVJNNS4u
+  cta: Email me
+  ctaURL: mailto:xizhiyun1995@gmail.com?subject=Friend-link%20request
+  emailCTA: Send email
+  emailURL: mailto:xizhiyun1995@gmail.com?subject=Friend-link%20request
+  applicationTitle: Friend-link request
+  applicationDescription: Include your site name, URL, short description, avatar, optional RSS feed, and whether you are open to a reciprocal link.
 ---
 
-This page demonstrates Liquid Stack's link hub, backlink cards, rules page, and a Microsoft Forms application flow. Demo entries are not recorded by this site or used for formal review. After copying the form template, replace the site details, privacy notice, and notification settings.
+This page collects my public entry points and sites or projects I am happy to recommend. There is no third-party form for now; please send friend-link requests by email.
