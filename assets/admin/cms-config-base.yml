@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 
 # Use GitHub's token sign-in by default. For OAuth, configure a provider of
-# your choice and replace the placeholders below before publishing.
+# your choice and replace the placeholders below before publishing. This
+# repository is public, so never store credentials or private user data here.
 backend:
   name: github
   repo: xizhiyun1995-netizen/xizhiyun1995-netizen.github.io
@@ -11,7 +12,7 @@ site_url: https://xizhiyun1995-netizen.github.io/
 display_url: https://xizhiyun1995-netizen.github.io/
 app_title: 碳基漫游 AI CMS
 logo:
-  src: liquid-stack-logo.png
+  src: site-logo.png
   show_in_header: true
 
 # Keep Hugo's existing English index.md / Chinese index.zh.md page-bundle

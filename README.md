@@ -2,7 +2,7 @@
 
 这是基于朋友小景开源的 [Liquid Stack](https://github.com/Jingyuan-Zheng/Liquid-Stack) 整理的 Hugo 个人博客模板，部署到 GitHub Pages。
 
-当前公开站点先保留 Liquid Stack 的完整模块和示例内容，原来的 ChatGPT 订阅教程已移出公开内容；教程源文件和此前提交仍保留在本地备份/ Git 历史中，后续可以逐篇重新加入。
+当前公开站点沿用 Liquid Stack 的模块结构，但已替换为“碳基漫游 AI”的文章、资源、照片墙和仪表盘内容；原来的 ChatGPT 订阅教程已移出公开内容，教程源文件和此前提交仍保留在本地备份 / Git 历史中。
 
 ## 已接入模块
 
@@ -14,6 +14,14 @@
 - 友链页面与示例申请流程；
 - Sveltia CMS 文件和配置；
 - 搜索、归档、分类、标签云和站点地图。
+
+## CMS 状态
+
+`/admin/` 已部署 Sveltia CMS 管理入口，配置使用 GitHub backend，目标仓库为本仓库的 `main` 分支。分类和标签词表位于 `data/taxonomies/`，供 CMS 的关联字段使用。
+
+首次使用需要登录一个对该仓库有写入权限的 GitHub 账号；保存会直接提交到 `main`，随后由 GitHub Actions 构建并发布 GitHub Pages。仓库中不保存 GitHub token、密码或其他凭据。CMS 前端从 `unpkg.com` 加载，普通公开页面不会加载 CMS 编辑器。
+
+首次登录、编辑和提交测试仍需由仓库所有者在自己的 GitHub 账号下完成；在此之前不要把 `/admin/` 当作无认证的公开投稿入口。
 
 评论模块代码保留，但评论功能暂不启用；接入真实 Waline 服务前不要填写服务地址。
 
