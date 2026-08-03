@@ -1,6 +1,6 @@
 # 碳基漫游 AI 博客
 
-这是面向中国大陆小白的 ChatGPT 订阅教程博客，使用 Hugo Extended、Liquid Stack 和 GitHub Pages 发布。
+这是「碳基漫游 AI」博客，记录 AI 工具、效率与数字生活相关的实用教程，当前从 ChatGPT 订阅专题开始。使用 Hugo Extended、Liquid Stack 和 GitHub Pages 发布。
 
 ## 本地运行
 

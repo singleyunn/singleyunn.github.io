@@ -1,6 +1,6 @@
 baseURL = "https://xizhiyun1995-netizen.github.io"
 locale = "zh-CN"
-title = "碳基漫游 AI | ChatGPT 订阅指南"
+title = "碳基漫游 AI"
 copyright = "碳基漫游 AI"
 theme = "stack"
 paginate = 10
@@ -71,7 +71,7 @@ enableGitInfo = false
 
 [params]
     mainSections = ["post"]
-    description = "面向中国大陆小白的 ChatGPT 订阅指南，整理 iPhone、Apple、安卓与 Google Play 路线。"
+    description = "探索 AI 工具、效率与数字生活，记录实用教程与使用经验。"
     rssFullContent = true
     SortBy = "weight"
     favicon = "/img/profile-placeholder.svg"
@@ -88,7 +88,7 @@ enableGitInfo = false
     [params.sidebar]
         compact = false
         emoji = "🧭"
-        subtitle = "面向中国大陆小白的 ChatGPT 订阅指南"
+        subtitle = "探索 AI 工具、效率与数字生活"
         avatar = "/img/profile-placeholder.svg"
 
     [params.article]
