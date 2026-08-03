@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">AI 工具</title><desc id="desc">碳基漫游 AI · AI 工具</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4e5fbd"/><stop offset="1" stop-color="#a9b7f2"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/><circle cx="1020" cy="120" r="210" fill="#fff" fill-opacity=".13"/><path d="M0 535C240 450 390 640 610 520s360-80 590 15v95H0z" fill="#fff" fill-opacity=".1"/>
+<text x="78" y="155" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" letter-spacing="6">碳基漫游 AI</text><text x="78" y="365" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="86" font-weight="800">AI 工具</text><text x="82" y="480" fill="#fff" fill-opacity=".84" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30">工具、扩展与工作流</text>
+</svg>
