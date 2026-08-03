@@ -1,10 +1,23 @@
-# 碳基漫游 AI 博客
+# 碳基漫游 AI · Liquid Stack 模板
 
-这是「碳基漫游 AI」博客，记录 AI 工具、效率与数字生活相关的实用教程，当前从 ChatGPT 订阅专题开始。使用 Hugo Extended、Liquid Stack 和 GitHub Pages 发布。
+这是基于朋友小景开源的 [Liquid Stack](https://github.com/Jingyuan-Zheng/Liquid-Stack) 整理的 Hugo 个人博客模板，部署到 GitHub Pages。
+
+当前公开站点先保留 Liquid Stack 的完整模块和示例内容，原来的 ChatGPT 订阅教程已移出公开内容；教程源文件和此前提交仍保留在本地备份/ Git 历史中，后续可以逐篇重新加入。
+
+## 已接入模块
+
+- 双语内容结构：英文首页与 `/zh/` 中文首页；
+- Liquid Glass 风格个人主页；
+- 教程启动台；
+- 可拖动照片墙；
+- 内容仪表盘；
+- 友链页面与示例申请流程；
+- Sveltia CMS 文件和配置；
+- 搜索、归档、分类、标签云和站点地图。
+
+评论模块代码保留，但评论功能暂不启用；接入真实 Waline 服务前不要填写服务地址。
 
 ## 本地运行
-
-在仓库根目录执行：
 
 ```bash
 hugo server -D
@@ -16,19 +29,17 @@ hugo server -D
 hugo --minify --cleanDestinationDir --ignoreCache
 ```
 
-## 目录说明
+## 后续替换内容
 
-- `content/post/`：13 篇教程文章；
-- `content/page/`：关于本站、启动台、仪表盘等页面；
-- `layouts/`、`assets/`：Liquid Stack 的站点扩展与样式；
-- `data/launchpad/`：教程启动台数据；
-- `static/img/`：站点图片和占位素材；
-- `themes/stack/`：Hugo Theme Stack v4.0.3 核心主题。
-
-Liquid Stack 由 [Jingyuan-Zheng](https://github.com/Jingyuan-Zheng) 开源，本仓库保留其署名链接。评论功能暂不启用；Sveltia CMS 暂不接入，文章继续使用 Markdown 管理。
+- `content/post/`：替换示例文章；
+- `content/page/`：替换关于、链接和其他页面；
+- `data/launchpad/`：替换启动台项目；
+- `data/photo-wall/` 与 `static/img/gallery/`：替换照片墙；
+- `static/img/avatar.jpg`：当前个人头像；
+- `hugo.yaml`：站点名称、简介、语言和服务配置。
 
 ## 发布
 
-向 `main` 分支 Push 后，GitHub Actions 会使用 Hugo Extended 构建并发布到 GitHub Pages。网站地址：
+向 `main` 分支 Push 后，GitHub Actions 使用 Hugo Extended 构建并发布到：
 
 https://xizhiyun1995-netizen.github.io/

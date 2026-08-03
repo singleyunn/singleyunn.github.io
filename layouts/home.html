@@ -22,7 +22,7 @@
             <div class="home-profile__announcement-bubble" id="home-profile-announcement" data-home-announcement-bubble role="note" aria-live="polite" hidden>
                 <strong>{{ $announcementTitle }}</strong>
                 {{ if $isChinese }}
-                    <p>本站已切换到朋友小景开源的 Liquid Stack 主题。你可以从教程总章开始，按自己的设备选择订阅路线。</p>
+                    <p>Liquid Stack 已作为开源 Hugo 模板发布。你可以保留需要的模块，再替换成自己的内容与服务。</p>
                 {{ else }}
                     <p>Liquid Stack is now available as an open-source Hugo starter. Keep the modules you need, then replace the content and services with your own.</p>
                 {{ end }}
@@ -34,8 +34,8 @@
         {{ with .Site.Menus.social }}<ol class="home-profile__social" aria-label="Social links">{{ range . }}<li><a href="{{ .URL }}" target="_blank" rel="noopener" title="{{ .Name }}">{{ partial "helper/icon" .Params.icon }}</a></li>{{ end }}</ol>{{ end }}
     </section>
     <section class="home-feature-grid" aria-label="{{ cond $isChinese "主页快捷入口" "Home shortcuts" }}">
-        {{ if gt (len $apps) 0 }}<a href="{{ "apps/" | relLangURL }}" class="home-feature-card home-feature-card--launchpad"><div class="home-feature-card__copy"><p>{{ cond $isChinese "内容入口" "Content entry" }}</p><h2>{{ cond $isChinese "打开教程启动台" "Open tutorial launchpad" }}</h2></div><div class="home-launchpad-teaser" aria-hidden="true">{{ range first 2 $apps }}<span class="home-launchpad-teaser__app"><img src="{{ relURL .icon }}" alt="" width="512" height="512" loading="lazy"></span>{{ end }}</div></a>{{ end }}
-        <a href="{{ "about/" | relLangURL }}" class="home-feature-card home-feature-card--resume"><div class="home-feature-card__copy"><p>{{ cond $isChinese "关于本站" "About this site" }}</p><h2>{{ cond $isChinese "了解本站的路线" "Learn about this site" }}</h2></div><div class="home-resume-teaser__mark" aria-hidden="true">{{ partial "helper/icon" "user" }}</div></a>
+        {{ if gt (len $apps) 0 }}<a href="{{ "apps/" | relLangURL }}" class="home-feature-card home-feature-card--launchpad"><div class="home-feature-card__copy"><p>{{ cond $isChinese "示例项目" "Sample projects" }}</p><h2>{{ cond $isChinese "打开启动台" "Open Launchpad" }}</h2></div><div class="home-launchpad-teaser" aria-hidden="true">{{ range first 2 $apps }}<span class="home-launchpad-teaser__app"><img src="{{ relURL .icon }}" alt="" width="512" height="512" loading="lazy"></span>{{ end }}</div></a>{{ end }}
+        <a href="{{ "about/" | relLangURL }}" class="home-feature-card home-feature-card--resume"><div class="home-feature-card__copy"><p>{{ cond $isChinese "关于页面" "About page" }}</p><h2>{{ cond $isChinese "讲讲你的故事" "Tell your story" }}</h2></div><div class="home-resume-teaser__mark" aria-hidden="true">{{ partial "helper/icon" "user" }}</div></a>
         <a href="{{ "dashboard/" | relLangURL }}" class="home-feature-card home-feature-card--dashboard"><div class="home-feature-card__copy"><p>{{ cond $isChinese "仪表盘" "Dashboard" }}</p><h2>{{ cond $isChinese "查看站点状态" "View site status" }}</h2></div><div class="home-dashboard-teaser__mark" aria-hidden="true">{{ partial "helper/icon" "dashboard" }}</div></a>
         {{ if gt (len $pictures) 0 }}<a href="{{ "pictures/" | relLangURL }}" class="home-feature-card home-feature-card--gallery"><div class="home-feature-card__copy"><p>{{ cond $isChinese "照片墙" "Photo wall" }}</p><h2>{{ cond $isChinese "浏览示例素材" "Browse visual notes" }}</h2></div><div class="home-gallery-teaser__stack" aria-hidden="true">{{ range $i, $picture := first 4 $pictures }}<img src="{{ relURL $picture.image }}" alt="" loading="lazy" style="--gallery-teaser-left: {{ mul $i 36 }}px; --gallery-teaser-mobile-left: {{ mul $i 50 }}px; --gallery-teaser-rotate: {{ sub (mul $i 7) 10 }}deg; --gallery-teaser-hover-rotate: {{ sub (mul $i 4) 6 }}deg;"><!-- generic teaser -->{{ end }}</div></a>{{ end }}
     </section>

@@ -1,7 +1,7 @@
 ---
 title: 网站地图
 slug: sitemap
-description: 浏览本站文章、分类和主要页面。
+description: 可浏览的文章、分类和主要页面目录。
 comments: false
 license: false
 layout: sitemap

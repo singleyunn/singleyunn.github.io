@@ -1,3 +1,6 @@
+{{- $serverResolver := resources.Get "js/waline-server.js" | minify | fingerprint -}}
+{{- $walineDemo := default false .Site.Params.comments.waline.demoMode -}}
+
 <footer class="site-footer">
     <section class="copyright">
         &copy;
@@ -8,22 +11,93 @@
     </section>
 
     <section class="powerby">
-        <a href="{{ "privacy-policy/" | relLangURL }}">隐私说明</a>
+        <a href="{{ "privacy-policy/" | relLangURL }}">{{ cond (hasPrefix .Site.Language.Lang "zh") "隐私政策" "Privacy Policy" }}</a>
         <span aria-hidden="true"> · </span>
-        {{ with .Site.GetPage "page" "sitemap" }}<a href="{{ .RelPermalink }}">网站地图</a>{{ end }}
+        {{ with .Site.GetPage "page" "sitemap" }}<a href="{{ .RelPermalink }}">{{ cond (hasPrefix $.Site.Language.Lang "zh") "网站地图" "Sitemap" }}</a>{{ end }}
         <span aria-hidden="true"> · </span>
-        {{ with .Site.GetPage "page" "dashboard" }}<a href="{{ .RelPermalink }}">站点仪表盘</a>{{ end }}
+        {{ with .Site.GetPage "page" "dashboard" }}<a href="{{ .RelPermalink }}">{{ cond (hasPrefix $.Site.Language.Lang "zh") "仪表盘" "Dashboard" }}</a>{{ end }}
+        {{- if ne .Kind "404" -}}
+            {{- if .IsHome }}
+                <br>
+                <span class="waline-site-pageview-count" aria-live="polite">
+                    {{- if $walineDemo -}}
+                        {{ cond (hasPrefix .Site.Language.Lang "zh") "全站浏览：" "Site views: " }}{{ lang.FormatNumber 0 (default 2673 .Site.Params.footer.demoSiteViews) }} {{ cond (hasPrefix .Site.Language.Lang "zh") "（示意）" "(example)" }}
+                    {{- else -}}
+                        {{ cond (hasPrefix .Site.Language.Lang "zh") "全站浏览：—" "Site views: —" }}
+                    {{- end -}}
+                </span>
+                {{- if not $walineDemo }}
+                    <br>
+                    <small class="site-view-counter__since">
+                        {{ cond (hasPrefix .Site.Language.Lang "zh") "统计始于 2026-05-26" "Counting since 2026-05-26" }}
+                    </small>
+                {{- end }}
+            {{- end }}
+            {{- if not $walineDemo }}
+            <span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
+            <script type="module">
+                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+                import { resolveWalineServerURL } from "{{ $serverResolver.RelPermalink }}";
+
+                const serverURL = await resolveWalineServerURL({
+                    primaryURL: {{ .Site.Params.comments.waline.serverURL | jsonify | safeJS }},
+                    fallbackURL: {{ .Site.Params.comments.waline.fallbackServerURL | jsonify | safeJS }},
+                    timeoutMs: {{ default 2500 .Site.Params.comments.waline.serverProbeTimeout }},
+                });
+                const lang = {{ cond (hasPrefix .Site.Language.Lang "zh") "zh-CN" "en-US" | jsonify | safeJS }};
+
+                pageviewCount({
+                    serverURL,
+                    lang,
+                    selector: ".waline-pageview-tracker",
+                });
+
+                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        path: "/__site_total__/",
+                        type: "time",
+                        action: "inc",
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        const count = payload?.data?.[0]?.time;
+                        const element = document.querySelector(".waline-site-pageview-count");
+                        if (!element || typeof count !== "number") return;
+                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
+                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
+                        element.textContent = `${label} ${formatted}`;
+                    })
+                    .catch(() => {});
+            </script>
+            {{- end }}
+        {{- end }}
         <br>
         <span>
-            使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 · 主题
-            <a href="https://github.com/Jingyuan-Zheng/Liquid-Stack" target="_blank" rel="noopener"><strong>Liquid Stack</strong></a>
-            由 <a href="https://github.com/Jingyuan-Zheng" target="_blank" rel="noopener">Jingyuan Zheng</a> 开源
+            {{ if hasPrefix .Site.Language.Lang "zh" }}
+                使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 · 主题 <a href="https://github.com/Jingyuan-Zheng/Liquid-Stack" target="_blank" rel="noopener"><strong>Liquid Stack</strong></a> 由 <a href="https://github.com/Jingyuan-Zheng" target="_blank" rel="noopener">Jingyuan Zheng</a> 设计
+            {{ else }}
+                Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> · Theme <a href="https://github.com/Jingyuan-Zheng/Liquid-Stack" target="_blank" rel="noopener"><strong>Liquid Stack</strong></a> designed by <a href="https://github.com/Jingyuan-Zheng" target="_blank" rel="noopener">Jingyuan Zheng</a>
+            {{ end }}
         </span>
-        {{ with .Site.Params.footer.launchDate }}
+        {{ if $walineDemo }}
             <br>
             <small class="site-runtime">
-                本站已运行 <strong data-site-runtime data-launch-date="{{ . }}">0</strong> 天
+                {{ cond (hasPrefix $.Site.Language.Lang "zh") "本站已运行" "Online for" }}
+                <strong>{{ lang.FormatNumber 0 (default 365 .Site.Params.footer.demoRuntimeDays) }}</strong>
+                {{ cond (hasPrefix $.Site.Language.Lang "zh") "天" "days" }}
             </small>
+        {{ else }}
+            {{ with .Site.Params.footer.launchDate }}
+                <br>
+                <small class="site-runtime">
+                    {{ cond (hasPrefix $.Site.Language.Lang "zh") "本站已运行" "Online for" }}
+                    <strong data-site-runtime data-launch-date="{{ . }}">0</strong>
+                    {{ cond (hasPrefix $.Site.Language.Lang "zh") "天" "days" }}
+                </small>
+            {{ end }}
         {{ end }}
     </section>
 </footer>

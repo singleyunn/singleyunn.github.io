@@ -1,7 +1,12 @@
 ---
-title: 图片墙
+title: 相册
+description: 由可编辑数据文件驱动的可拖动视觉墙。
 slug: pictures
-description: 预留的图片展示页面，后续可加入教程截图或 AI 作品。
+layout: pictures
 comments: false
 license: false
+menu:
+  main:
+    weight: -55
+    params: { icon: pictures }
 ---

@@ -1,3 +1,9 @@
+- id: content
+  title: Content management
+  titleZh: 内容管理
+  url: /admin/
+  icon: database
+  external: false
 - id: github-actions
   title: GitHub Actions
   titleZh: GitHub Actions

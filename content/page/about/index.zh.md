@@ -1,30 +1,28 @@
 ---
-title: 关于本站
+title: 关于
 slug: about
-description: 介绍本站的内容范围、写作方式和维护状态。
+description: 可替换为网站故事或个人介绍的页面；以下仅为虚构简历演示。
 comments: false
 license: false
+cvPage: true
+menu:
+  main:
+    weight: -90
+    params: { icon: user }
 ---
 
-# 关于本站
+<style>
+.article-header,.article-metadata,.language-switch,.article-translations{display:none!important}:root{--cv-accent:var(--accent-color);--cv-border:rgba(var(--accent-color-rgb),.22);--cv-soft:rgba(var(--accent-color-rgb),.07);--cv-main:var(--card-text-color-main);--cv-muted:var(--card-text-color-secondary)}.cv-page{max-width:980px;margin:0 auto;padding:2rem 0 4rem;color:var(--cv-main)}.cv-page>*{opacity:0;animation:cv-rise-in .7s cubic-bezier(.16,1,.3,1) forwards}.cv-page>:nth-child(2){animation-delay:.08s}.cv-page>:nth-child(3){animation-delay:.14s}.cv-page>:nth-child(4){animation-delay:.2s}.cv-page>:nth-child(5){animation-delay:.26s}@keyframes cv-rise-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}.cv-floating-nav{position:fixed;top:50%;right:2.4rem;z-index:999;display:flex;align-items:center;transform:translate(18.2rem,-50%);transition:transform .6s cubic-bezier(.16,1,.3,1)}.cv-floating-nav:hover{transform:translate(0,-50%)}.cv-floating-trigger{display:grid;flex:0 0 5.2rem;width:5.2rem;height:5.2rem;place-items:center;color:var(--cv-accent);background:var(--card-background);border:1px solid var(--cv-border);border-right:0;border-radius:16px 0 0 16px;box-shadow:var(--shadow-l1)}.cv-floating-links{width:18.2rem;margin:0;padding:1rem;list-style:none;background:var(--card-background);border:1px solid var(--cv-border);border-radius:20px;box-shadow:var(--shadow-l2)}.cv-floating-links a,.cv-nav a{display:block;padding:.8rem 1.2rem;color:var(--cv-muted);font-size:1.3rem;font-weight:700;text-decoration:none;border-radius:12px}.cv-floating-links a:hover,.cv-nav a:hover{color:var(--cv-accent);background:var(--cv-soft)}.cv-hero,.cv-section{padding:clamp(2rem,5vw,3.5rem);margin-bottom:1.6rem;background:var(--card-background);border:1px solid var(--cv-border);border-radius:28px;box-shadow:var(--shadow-l1)}.cv-hero{padding:clamp(2.5rem,7vw,5.5rem);background:radial-gradient(circle at 92% 10%,rgba(var(--accent-color-rgb),.2),transparent 34%),var(--card-background)}.cv-kicker{margin:0 0 1.2rem;color:var(--cv-accent);font-size:1.3rem;font-weight:750;letter-spacing:.14em;text-transform:uppercase}.cv-hero h1{margin:0;font-size:clamp(3.6rem,8vw,6.2rem);line-height:1;letter-spacing:-.045em}.cv-profile{max-width:780px;margin:2.2rem 0 0;color:var(--cv-muted);font-size:1.7rem;line-height:1.75}.cv-nav{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.5rem 0 3rem;padding:0;list-style:none}.cv-nav a{background:var(--card-background);border:1px solid var(--cv-border);border-radius:999px}.cv-section-heading{display:flex;align-items:center;gap:1.2rem;margin:0 0 2.5rem;font-size:clamp(2rem,4vw,2.6rem)}.cv-section-heading:before{width:.45rem;height:2.6rem;content:"";background:var(--cv-accent);border-radius:999px}.cv-entry{position:relative;padding:0 0 2.7rem 2.2rem;border-left:1px solid var(--cv-border)}.cv-entry:last-child{padding-bottom:0}.cv-entry:before{position:absolute;top:.45rem;left:-.45rem;width:.9rem;height:.9rem;content:"";background:var(--cv-accent);border:3px solid var(--card-background);border-radius:50%}.cv-entry-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem 2rem;align-items:baseline}.cv-entry h3{margin:0;font-size:1.95rem}.cv-date{color:var(--cv-accent);font-size:1.4rem;font-weight:700}.cv-subtitle,.cv-detail{color:var(--cv-muted);font-size:1.45rem;line-height:1.6}.cv-list{margin:1.2rem 0 0;padding-left:1.4rem;font-size:1.5rem;line-height:1.7}.cv-list li+li{margin-top:.65rem}.cv-skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.cv-skill{padding:1.4rem 1.5rem;background:var(--cv-soft);border:1px solid var(--cv-border);border-radius:16px}.cv-skill strong{display:block;margin-bottom:.45rem;color:var(--cv-accent);font-size:1.4rem}.cv-skill span{font-size:1.4rem;line-height:1.55}.cv-achievements{display:grid;gap:1rem;margin:0;padding:0;list-style:none}.cv-achievements li{display:grid;grid-template-columns:10rem minmax(0,1fr);gap:1.5rem;padding:1.2rem 1.4rem;background:var(--cv-soft);border-radius:14px;font-size:1.45rem}.cv-achievements time{color:var(--cv-accent);font-weight:700}@media(max-width:1200px){.cv-floating-nav{display:none}}@media(max-width:700px){.cv-page{padding-top:.5rem}.cv-entry-header,.cv-achievements li{grid-template-columns:1fr;gap:.4rem}.cv-skill-grid{grid-template-columns:1fr}}
+</style>
 
-这里是「碳基漫游 AI」博客，当前从 ChatGPT 订阅与使用教程开始，后续也会整理其他 AI 工具、效率工具与数字生活主题。
-
-## 这个博客解决什么问题？
-
-面向第一次接触相关服务的中国大陆用户，按小白能执行的顺序整理：
-
-- iPhone、外区 Apple ID、礼品卡与 Apple 内购路线；
-- 安卓、Google 账号与 Google Play 路线；
-- 电脑端同步使用、海外手机号与海外银行卡等进阶问题；
-- 风控、常见失败原因与核验清单。
-
-## 内容原则
-
-教程尽量区分**已核验事实、可能变化的规则和个人经验**。价格、地区政策、应用商店页面和风控规则可能变化，实际操作时请以官方页面显示为准。
-
-当前文章仍在逐章审核，截图位置会在后续审核完成后逐步补充或替换。
-
-## 维护说明
-
-本站使用 Hugo 与 Liquid Stack 构建，通过 GitHub Actions 自动发布到 GitHub Pages。主题由 [Jingyuan-Zheng](https://github.com/Jingyuan-Zheng) 开源，感谢朋友小景的分享。
+<nav class="cv-floating-nav" aria-label="快速导航"><span class="cv-floating-trigger" aria-hidden="true">☰</span><ul class="cv-floating-links"><li><a href="#education">教育</a></li><li><a href="#skills">技能</a></li><li><a href="#projects">项目</a></li><li><a href="#experience">经历</a></li><li><a href="#achievements">奖项</a></li><li><a href="#additional">附加信息</a></li></ul></nav>
+<main class="cv-page">
+<header class="cv-hero"><p class="cv-kicker">关于页面 · 简历演示</p><h1>你的名字</h1><p class="cv-profile">这个页面可以写关于网站的故事，也可以介绍你自己。这里选用一份完全虚构的简历来演示原有页面的完整排版、动画和菜单；替换或删除内容即可成为你自己的页面。</p></header>
+<nav aria-label="页面章节"><ul class="cv-nav"><li><a href="#education">教育</a></li><li><a href="#skills">技能</a></li><li><a href="#projects">项目</a></li><li><a href="#experience">经历</a></li><li><a href="#achievements">奖项</a></li><li><a href="#additional">附加信息</a></li></ul></nav>
+<section id="education" class="cv-section"><h2 class="cv-section-heading">教育经历</h2><article class="cv-entry"><div class="cv-entry-header"><h3>示例大学</h3><time class="cv-date">2022 – 2024</time></div><p class="cv-subtitle">硕士学位 · 服务与体验设计</p><p class="cv-detail">虚构课程：研究方法、信息设计、产品策略与数据可视化。</p></article><article class="cv-entry"><div class="cv-entry-header"><h3>示例学院</h3><time class="cv-date">2018 – 2022</time></div><p class="cv-subtitle">学士学位 · 传播与设计</p><p class="cv-detail">虚构课程：写作、界面设计、创意编程与视觉叙事。</p></article></section>
+<section id="skills" class="cv-section"><h2 class="cv-section-heading">技能</h2><div class="cv-skill-grid"><div class="cv-skill"><strong>产品思维</strong><span>研究、梳理问题、优先级与落地。</span></div><div class="cv-skill"><strong>设计</strong><span>信息架构、交互、视觉系统与可访问性。</span></div><div class="cv-skill"><strong>写作与研究</strong><span>访谈、叙事、综合与基于证据的决策。</span></div><div class="cv-skill"><strong>工具</strong><span>Figma、HTML、CSS、Hugo、Git 和一点 Python。</span></div></div></section>
+<section id="projects" class="cv-section"><h2 class="cv-section-heading">项目</h2><article class="cv-entry"><div class="cv-entry-header"><h3>个人作品空间</h3><time class="cv-date">2025 – 至今</time></div><p class="cv-subtitle">虚构项目 · 独立创作</p><ul class="cv-list"><li>设计一个把文章、照片、项目和链接汇集在一起的网站。</li><li>建立易于维护的内容结构与视觉语言。</li><li>根据真实使用反馈持续改进体验。</li></ul></article><article class="cv-entry"><div class="cv-entry-header"><h3>城市漫游地图</h3><time class="cv-date">2024</time></div><p class="cv-subtitle">虚构协作项目 · 小型团队</p><ul class="cv-list"><li>把访谈、照片和地点整理为可探索的在线故事。</li><li>负责信息结构、界面原型与内容编辑。</li></ul></article></section>
+<section id="experience" class="cv-section"><h2 class="cv-section-heading">工作经历</h2><article class="cv-entry"><div class="cv-entry-header"><h3>体验设计师 · 示例工作室</h3><time class="cv-date">2024 – 至今</time></div><ul class="cv-list"><li>与不同角色协作，把模糊想法转化为清晰、可使用的服务体验。</li><li>维护设计文档并推动持续迭代。</li></ul></article><article class="cv-entry"><div class="cv-entry-header"><h3>内容设计实习生 · 示例机构</h3><time class="cv-date">2022 – 2024</time></div><ul class="cv-list"><li>支持网站内容、编辑流程和基础数据整理。</li></ul></article></section>
+<section id="achievements" class="cv-section"><h2 class="cv-section-heading">奖项与活动</h2><ul class="cv-achievements"><li><time>2025</time><span>虚构设计奖 · 用作简历条目的展示示例</span></li><li><time>2024</time><span>虚构研究资助 · 可替换为奖项、发表或志愿活动</span></li></ul></section>
+<section id="additional" class="cv-section"><h2 class="cv-section-heading">附加信息</h2><p class="cv-detail"><strong>语言：</strong>在这里填写你希望公开的语言能力。</p><p class="cv-detail"><strong>链接：</strong>可放入作品集、GitHub、邮箱或其他通用链接。</p></section>
+</main>

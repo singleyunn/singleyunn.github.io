@@ -1,7 +1,7 @@
 ---
-title: 站点仪表盘
+title: 仪表盘
+description: 通用的网站运营概览。
 slug: dashboard
-description: 本站文章数量、分类和发布情况概览。
+layout: dashboard
 comments: false
-license: false
 ---

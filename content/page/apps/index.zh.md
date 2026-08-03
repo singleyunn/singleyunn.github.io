@@ -1,7 +1,8 @@
 ---
-title: 教程启动台
+title: 启动台
+description: 可复用的交互式项目启动器。
 slug: apps
-description: 从这里进入本站的主要教程路线。
+layout: apps
 comments: false
 license: false
 ---

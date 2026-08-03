@@ -14,7 +14,7 @@
     {{- range .Site.Taxonomies.categories -}}
         {{- if gt .Count $maxCategoryCount }}{{ $maxCategoryCount = .Count }}{{ end -}}
     {{- end -}}
-    {{- $launchDate := default "2026-08-02" .Site.Params.footer.launchDate -}}
+    {{- $launchDate := default "2025-09-14" .Site.Params.footer.launchDate -}}
     {{- $dashboardData := dict
         "dates" $activityDates
         "locale" (cond $isChinese "zh-CN" "en-US")
@@ -55,13 +55,13 @@
                     <div class="dashboard-site-identity">
                         <img
                             class="dashboard-site-identity__logo"
-                            src="{{ "img/profile-placeholder.svg" | relURL }}"
+                            src="{{ "admin/liquid-stack-logo.png" | relURL }}"
                             width="512"
                             height="512"
                             alt=""
                         >
                         <strong>{{ .Site.Title }}</strong>
-                        <span>Hugo {{ hugo.Version }} · Liquid Stack</span>
+                        <span>Hugo {{ hugo.Version }} · Stack 4.0.3</span>
                     </div>
 
                     <dl class="dashboard-system-list">
@@ -76,14 +76,14 @@
                             <dt>{{ cond $isChinese "主题" "Theme" }}</dt>
                             <dd>
                                 <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "layers" }}</span>
-                                <span>Liquid Stack（基于 Stack v4.0.3）</span>
+                                <span>Stack v4.0.3</span>
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
                             <dt>{{ cond $isChinese "部署平台" "Deployment" }}</dt>
                             <dd>
                                 <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "brand-cloudflare" }}</span>
-                                <span>GitHub Pages</span>
+                                <span>Cloudflare Pages</span>
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
@@ -97,7 +97,7 @@
                             <dt>{{ cond $isChinese "内容系统" "Content system" }}</dt>
                             <dd>
                                 <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "database" }}</span>
-                                <span>Markdown · GitHub Desktop</span>
+                                <span>Sveltia CMS · GitHub</span>
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
