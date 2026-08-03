@@ -30,9 +30,8 @@ menu:
 
 <main class="about-page">
 <header class="about-hero"><p class="about-kicker">关于页面 · 碳基漫游 AI</p><h1>xizhiyun</h1><p class="about-profile">这里是我的个人博客。我会在这里记录 AI 工具、效率方法与数字生活中的实践，也把值得复用的经验整理成更容易理解的内容。</p></header>
-<nav class="about-nav" aria-label="页面章节"><a href="#focus">我在关注什么</a><a href="#site">这个站点</a><a href="#future">接下来</a><a href="#contact">找到我</a></nav>
+<nav class="about-nav" aria-label="页面章节"><a href="#focus">我在关注什么</a><a href="#site">这个站点</a><a href="#contact">找到我</a></nav>
 <section id="focus" class="about-section"><h2 class="about-heading">我在关注什么</h2><div class="about-grid"><article class="about-card"><h3>AI 工具</h3><p>记录工具选择、实际使用感受和适合普通人的工作流。</p></article><article class="about-card"><h3>效率实践</h3><p>把零散的操作经验整理成可以照着做的步骤和清单。</p></article><article class="about-card"><h3>数字生活</h3><p>关注账号、设备、订阅和跨平台使用中的真实问题。</p></article><article class="about-card"><h3>持续记录</h3><p>不追求一次写完，先把验证过的内容留下，再持续修正。</p></article></div></section>
 <section id="site" class="about-section"><h2 class="about-heading">这个站点</h2><p>“碳基漫游 AI”是一个持续建设中的个人博客。站点使用 Hugo、Liquid Stack、GitHub Actions 和 GitHub Pages 搭建，内容会随着真实使用逐步补充。</p><p>这里的文章、启动台、照片墙和链接页都会慢慢替换成我自己的内容；如果某个页面还保留示例，它只是临时占位，不代表最终内容。</p></section>
-<section id="future" class="about-section"><h2 class="about-heading">接下来</h2><p>我会按模块逐步完善这个站点：先补齐个人介绍和公开链接，再替换启动台、照片墙、示例文章与分类。每次只做一小步，确保内容真实、可维护，也方便以后继续学习 Hugo 和 GitHub 工作流。</p></section>
 <section id="contact" class="about-section"><h2 class="about-heading">找到我</h2><ul class="about-links"><li><a href="https://xizhiyun1995-netizen.github.io/zh/" rel="me">博客主页 <span>xizhiyun1995-netizen.github.io/zh/</span></a></li><li><a href="https://github.com/xizhiyun1995-netizen" target="_blank" rel="me noopener">GitHub <span>@xizhiyun1995-netizen</span></a></li><li><a href="mailto:xizhiyun1995@gmail.com">邮箱 <span>xizhiyun1995@gmail.com</span></a></li><li><a href="https://x.com/Singlea8uw" target="_blank" rel="me noopener">X <span>@Singlea8uw</span></a></li></ul></section>
 </main>
