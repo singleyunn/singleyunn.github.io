@@ -13,7 +13,7 @@
 - 内容仪表盘；
 - 友链页面与示例申请流程；
 - Sveltia CMS 文件和配置；
-- 搜索、归档和站点地图；分类与标签将在加入首篇文章后恢复。
+- 搜索、归档、分类、标签云和站点地图。
 
 评论模块代码保留，但评论功能暂不启用；接入真实 Waline 服务前不要填写服务地址。
 
@@ -31,7 +31,7 @@ hugo --minify --cleanDestinationDir --ignoreCache
 
 ## 后续替换内容
 
-- `content/post/`：加入你自己的文章；首篇文章加入后，从 `hugo.yaml` 移除临时的 `disableKinds: [taxonomy, term]` 和 `taxonomies: {}`。
+- `content/post/`：加入或替换自己的文章；
 - `content/page/`：替换关于、链接和其他页面；
 - `data/launchpad/`：替换资源导航条目；
 - `data/photo-wall/` 与 `static/img/gallery/`：替换照片墙；

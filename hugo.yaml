@@ -30,9 +30,6 @@ languages:
       sidebar:
         subtitle: 探索 AI 工具、效率与数字生活
 pagination: { pagerSize: 10 }
-# 暂无公开文章时关闭空的分类/标签页；加入第一篇文章后移除这两项。
-disableKinds: [taxonomy, term]
-taxonomies: {}
 permalinks:
   post: /p/:slug/
   page: /:slug/
