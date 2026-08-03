@@ -12,7 +12,7 @@
 
     <article class="main-article apps-article">
         <section class="apps-launchpad" data-app-launchpad aria-label="{{ .Title }}">
-            <p class="apps-launchpad__demo-note" aria-hidden="true">{{ cond $isChinese "演示参考，可替换为你自己的项目" "Demo reference — replace with your own projects" }}</p>
+            <p class="apps-launchpad__demo-note" aria-hidden="true">{{ cond $isChinese "在线工具与网站入口，请自行核对服务条款和隐私政策" "Online tools and websites — check each service's terms and privacy policy" }}</p>
             {{ if gt (len $apps) 0 }}
                 <div class="apps-launchpad__grid">
                     {{ range $apps }}
@@ -74,7 +74,7 @@
                     data-app-preview-close
                 ></button>
                 <a class="app-preview__article" href="/" data-app-preview-article>
-                    {{ cond $isChinese "打开对应文章" "Open related article" }}
+                    {{ cond $isChinese "打开资源" "Open resource" }}
                 </a>
             </figure>
         </div>

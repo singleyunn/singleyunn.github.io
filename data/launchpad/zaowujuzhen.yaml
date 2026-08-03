@@ -1,0 +1,17 @@
+order: 5
+id: zaowujuzhen
+name: Creator Radar
+nameZh: 造物雷达
+label: Creator Radar
+labelZh: 造物雷达
+category: GitHub and AI discovery
+categoryZh: GitHub / AI 资源
+description: A curated radar for discovering GitHub projects and AI creator resources.
+descriptionZh: 持续筛选 GitHub 项目与 AI 创作资源的发现入口。
+icon: "https://zaowujuzhen.com/favicon.ico"
+iconMode: app
+screenshot: "/img/resource-previews/zaowujuzhen.svg"
+screenshotAlt: Creator Radar resource preview
+screenshotAltZh: 造物雷达资源预览
+article: "https://zaowujuzhen.com/maker/radar/github"
+articleZh: "https://zaowujuzhen.com/maker/radar/github"

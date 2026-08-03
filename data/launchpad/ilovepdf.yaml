@@ -1,0 +1,17 @@
+order: 1
+id: ilovepdf
+name: iLovePDF
+nameZh: iLovePDF
+label: iLovePDF
+labelZh: iLovePDF
+category: PDF tools
+categoryZh: PDF 工具
+description: Online tools for merging, splitting, compressing, and converting PDF files.
+descriptionZh: 在线合并、拆分、压缩和转换 PDF 文件。
+icon: "https://www.ilovepdf.com/img/ilovepdf.svg"
+iconMode: logo
+screenshot: "/img/resource-previews/ilovepdf.svg"
+screenshotAlt: iLovePDF resource preview
+screenshotAltZh: iLovePDF 资源预览
+article: "https://www.ilovepdf.com/zh-cn"
+articleZh: "https://www.ilovepdf.com/zh-cn"

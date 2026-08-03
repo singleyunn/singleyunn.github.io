@@ -1,0 +1,17 @@
+order: 2
+id: office-tool-plus
+name: Office Tool Plus
+nameZh: Office Tool Plus
+label: Office Tool Plus
+labelZh: Office Tool Plus
+category: Office deployment
+categoryZh: Office 部署
+description: A Windows tool for deploying and managing Microsoft Office.
+descriptionZh: 用于 Windows 部署和管理 Microsoft Office 的工具。
+icon: "https://otp.landian.vip/assets/images/logo.webp"
+iconMode: logo
+screenshot: "/img/resource-previews/office-tool-plus.svg"
+screenshotAlt: Office Tool Plus resource preview
+screenshotAltZh: Office Tool Plus 资源预览
+article: "https://otp.landian.vip/zh-cn/download.html"
+articleZh: "https://otp.landian.vip/zh-cn/download.html"

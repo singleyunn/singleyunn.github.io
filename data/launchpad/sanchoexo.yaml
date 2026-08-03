@@ -1,0 +1,17 @@
+order: 6
+id: sanchoexo
+name: SanchoExo
+nameZh: SanchoExo
+label: SanchoExo
+labelZh: SanchoExo
+category: Local AI data
+categoryZh: 本地 AI 数据
+description: A local AI data-analysis workspace built around DuckDB and auditable workflows.
+descriptionZh: 以 DuckDB 和可审计工作流为核心的本地 AI 数据研判工作台。
+icon: "https://sanchoexo.com/img/icon-rounded.png"
+iconMode: app
+screenshot: "/img/resource-previews/sanchoexo.svg"
+screenshotAlt: SanchoExo resource preview
+screenshotAltZh: SanchoExo 资源预览
+article: "https://sanchoexo.com/"
+articleZh: "https://sanchoexo.com/"

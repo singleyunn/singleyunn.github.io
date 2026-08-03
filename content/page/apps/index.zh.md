@@ -1,6 +1,6 @@
 ---
-title: 启动台
-description: 可复用的交互式项目启动器。
+title: 资源导航
+description: 我整理的在线工具、软件与资料网站入口。
 slug: apps
 layout: apps
 comments: false

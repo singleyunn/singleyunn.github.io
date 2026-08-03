@@ -1,0 +1,17 @@
+order: 4
+id: sejda
+name: Sejda
+nameZh: Sejda
+label: Sejda
+labelZh: Sejda
+category: PDF tools
+categoryZh: PDF 工具
+description: Online and desktop tools for editing, converting, merging, and signing PDFs.
+descriptionZh: 支持编辑、转换、合并和签署 PDF 的在线与桌面工具。
+icon: "/img/resource-previews/sejda.svg"
+iconMode: app
+screenshot: "/img/resource-previews/sejda.svg"
+screenshotAlt: Sejda resource preview
+screenshotAltZh: Sejda 资源预览
+article: "https://www.sejda.com/"
+articleZh: "https://www.sejda.com/"

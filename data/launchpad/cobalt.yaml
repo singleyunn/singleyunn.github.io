@@ -1,0 +1,17 @@
+order: 3
+id: cobalt
+name: cobalt.tools
+nameZh: cobalt.tools
+label: cobalt.tools
+labelZh: cobalt.tools
+category: Media utility
+categoryZh: 媒体工具
+description: An open-source tool for saving media from supported services; follow copyright and platform rules.
+descriptionZh: 开源的多平台媒体保存工具，请遵守版权和平台规则。
+icon: "https://cobalt.tools/favicon.png"
+iconMode: app
+screenshot: "/img/resource-previews/cobalt.svg"
+screenshotAlt: cobalt.tools resource preview
+screenshotAltZh: cobalt.tools 资源预览
+article: "https://cobalt.tools/"
+articleZh: "https://cobalt.tools/"
