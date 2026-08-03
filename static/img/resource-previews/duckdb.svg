@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">DuckDB 中文站 · 资源导航</title>
+  <desc id="desc">SQL / OLAP 数据库</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f09b3d"/><stop offset="1" stop-color="#f5cf68"/></linearGradient></defs>
+  <rect width="1200" height="720" rx="42" fill="url(#bg)"/>
+  <circle cx="1030" cy="110" r="210" fill="#fff" fill-opacity=".14"/>
+  <circle cx="1090" cy="620" r="250" fill="#fff" fill-opacity=".1"/>
+  <path d="M0 610C210 500 360 700 610 565s380-78 590 25v130H0z" fill="#fff" fill-opacity=".08"/>
+  <text x="82" y="115" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="28" letter-spacing="5">CARBON ROAMING AI · RESOURCE</text>
+  <text x="82" y="340" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="72" font-weight="800">DuckDB 中文站</text>
+  <text x="86" y="430" fill="#fff" fill-opacity=".9" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="38">SQL / OLAP 数据库</text>
+  <text x="86" y="605" fill="#fff" fill-opacity=".78" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="25">在线工具与网站入口 · 请自行核对服务条款</text>
+</svg>

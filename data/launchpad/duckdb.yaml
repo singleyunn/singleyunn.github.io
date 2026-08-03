@@ -1,0 +1,17 @@
+order: 8
+id: duckdb
+name: DuckDB
+nameZh: DuckDB 中文站
+label: DuckDB
+labelZh: DuckDB 中文站
+category: SQL / OLAP database
+categoryZh: SQL / OLAP 数据库
+description: The Chinese site for DuckDB, an in-process analytical SQL database.
+descriptionZh: DuckDB 中文站：一款可在本地、服务器和浏览器中运行的进程内分析型 SQL 数据库。
+icon: "https://duckdb.org.cn/images/favicon/apple-touch-icon.png"
+iconMode: app
+screenshot: "/img/resource-previews/duckdb.svg"
+screenshotAlt: DuckDB Chinese website preview
+screenshotAltZh: DuckDB 中文站资源预览
+article: "https://duckdb.org.cn/#quickinstall"
+articleZh: "https://duckdb.org.cn/#quickinstall"
