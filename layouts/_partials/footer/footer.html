@@ -1,5 +1,4 @@
-{{- $serverResolver := resources.Get "js/waline-server.js" | minify | fingerprint -}}
-{{- $walineDemo := default false .Site.Params.comments.waline.demoMode -}}
+{{- $commentsEnabled := default false .Site.Params.comments.enabled -}}
 
 <footer class="site-footer">
     <section class="copyright">
@@ -17,61 +16,9 @@
         <span aria-hidden="true"> · </span>
         {{ with .Site.GetPage "page" "dashboard" }}<a href="{{ .RelPermalink }}">{{ cond (hasPrefix $.Site.Language.Lang "zh") "仪表盘" "Dashboard" }}</a>{{ end }}
         {{- if ne .Kind "404" -}}
-            {{- if .IsHome }}
+            {{- if and .IsHome $commentsEnabled }}
                 <br>
-                <span class="waline-site-pageview-count" aria-live="polite">
-                    {{- if $walineDemo -}}
-                        {{ cond (hasPrefix .Site.Language.Lang "zh") "全站浏览：" "Site views: " }}{{ lang.FormatNumber 0 (default 2673 .Site.Params.footer.demoSiteViews) }} {{ cond (hasPrefix .Site.Language.Lang "zh") "（示意）" "(example)" }}
-                    {{- else -}}
-                        {{ cond (hasPrefix .Site.Language.Lang "zh") "全站浏览：—" "Site views: —" }}
-                    {{- end -}}
-                </span>
-                {{- if not $walineDemo }}
-                    <br>
-                    <small class="site-view-counter__since">
-                        {{ cond (hasPrefix .Site.Language.Lang "zh") "统计始于 2026-05-26" "Counting since 2026-05-26" }}
-                    </small>
-                {{- end }}
-            {{- end }}
-            {{- if not $walineDemo }}
-            <span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
-            <script type="module">
-                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
-                import { resolveWalineServerURL } from "{{ $serverResolver.RelPermalink }}";
-
-                const serverURL = await resolveWalineServerURL({
-                    primaryURL: {{ .Site.Params.comments.waline.serverURL | jsonify | safeJS }},
-                    fallbackURL: {{ .Site.Params.comments.waline.fallbackServerURL | jsonify | safeJS }},
-                    timeoutMs: {{ default 2500 .Site.Params.comments.waline.serverProbeTimeout }},
-                });
-                const lang = {{ cond (hasPrefix .Site.Language.Lang "zh") "zh-CN" "en-US" | jsonify | safeJS }};
-
-                pageviewCount({
-                    serverURL,
-                    lang,
-                    selector: ".waline-pageview-tracker",
-                });
-
-                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        path: "/__site_total__/",
-                        type: "time",
-                        action: "inc",
-                    }),
-                })
-                    .then((response) => response.json())
-                    .then((payload) => {
-                        const count = payload?.data?.[0]?.time;
-                        const element = document.querySelector(".waline-site-pageview-count");
-                        if (!element || typeof count !== "number") return;
-                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
-                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
-                        element.textContent = `${label} ${formatted}`;
-                    })
-                    .catch(() => {});
-            </script>
+                <span class="waline-site-pageview-count" aria-live="polite">{{ cond (hasPrefix .Site.Language.Lang "zh") "全站浏览：—" "Site views: —" }}</span>
             {{- end }}
         {{- end }}
         <br>
@@ -82,22 +29,13 @@
                 Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> · Theme <a href="https://github.com/Jingyuan-Zheng/Liquid-Stack" target="_blank" rel="noopener"><strong>Liquid Stack</strong></a> designed by <a href="https://github.com/Jingyuan-Zheng" target="_blank" rel="noopener">Jingyuan Zheng</a>
             {{ end }}
         </span>
-        {{ if $walineDemo }}
+        {{ with .Site.Params.footer.launchDate }}
             <br>
             <small class="site-runtime">
                 {{ cond (hasPrefix $.Site.Language.Lang "zh") "本站已运行" "Online for" }}
-                <strong>{{ lang.FormatNumber 0 (default 365 .Site.Params.footer.demoRuntimeDays) }}</strong>
+                <strong data-site-runtime data-launch-date="{{ . }}">0</strong>
                 {{ cond (hasPrefix $.Site.Language.Lang "zh") "天" "days" }}
             </small>
-        {{ else }}
-            {{ with .Site.Params.footer.launchDate }}
-                <br>
-                <small class="site-runtime">
-                    {{ cond (hasPrefix $.Site.Language.Lang "zh") "本站已运行" "Online for" }}
-                    <strong data-site-runtime data-launch-date="{{ . }}">0</strong>
-                    {{ cond (hasPrefix $.Site.Language.Lang "zh") "天" "days" }}
-                </small>
-            {{ end }}
         {{ end }}
     </section>
 </footer>

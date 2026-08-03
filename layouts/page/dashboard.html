@@ -16,7 +16,7 @@
             {{- if gt .Count $maxCategoryCount }}{{ $maxCategoryCount = .Count }}{{ end -}}
         {{- end -}}
     {{- end -}}
-    {{- $launchDate := default "2025-09-14" .Site.Params.footer.launchDate -}}
+    {{- $launchDate := default "2026-08-01" .Site.Params.footer.launchDate -}}
     {{- $dashboardData := dict
         "dates" $activityDates
         "locale" (cond $isChinese "zh-CN" "en-US")
@@ -57,7 +57,7 @@
                     <div class="dashboard-site-identity">
                         <img
                             class="dashboard-site-identity__logo"
-                            src="{{ "admin/liquid-stack-logo.png" | relURL }}"
+                            src="{{ "img/avatar.jpg" | relURL }}"
                             width="512"
                             height="512"
                             alt=""
@@ -84,15 +84,15 @@
                         <div class="dashboard-system-row">
                             <dt>{{ cond $isChinese "部署平台" "Deployment" }}</dt>
                             <dd>
-                                <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "brand-cloudflare" }}</span>
-                                <span>Cloudflare Pages</span>
+                                <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "brand-github" }}</span>
+                                <span>GitHub Pages</span>
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
                             <dt>{{ cond $isChinese "评论系统" "Comments" }}</dt>
                             <dd>
                                 <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "messages" }}</span>
-                                <span>{{ cond $isChinese "未启用（可选）" "Disabled (optional)" }}</span>
+                                <span>{{ cond $isChinese "未启用" "Disabled" }}</span>
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
@@ -103,10 +103,10 @@
                             </dd>
                         </div>
                         <div class="dashboard-system-row">
-                            <dt>{{ cond $isChinese "友链申请系统" "Backlink applications" }}</dt>
+                            <dt>{{ cond $isChinese "友链申请" "Friend links" }}</dt>
                             <dd>
                                 <span class="dashboard-system-row__icon" aria-hidden="true">{{ partial "helper/icon" "articles" }}</span>
-                                <span>{{ cond $isChinese "可配置的表单或邮箱" "Configurable form or email" }}</span>
+                                <span>{{ cond $isChinese "邮箱申请" "Via email" }}</span>
                             </dd>
                         </div>
                     </dl>

@@ -46,9 +46,7 @@ params:
     avatar: /img/avatar.jpg
   footer:
     since: 2026
-    customText: Built with Liquid Stack.
-    demoSiteViews: 2673
-    demoRuntimeDays: 365
+    launchDate: "2026-08-01"
   article:
     math: true
     toc: true
