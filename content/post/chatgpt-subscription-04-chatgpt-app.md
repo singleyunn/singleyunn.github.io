@@ -78,7 +78,7 @@ slug: "chatgpt-subscription-04-chatgpt-app"
 ### 登录时注意
 
 - 全程保持网络稳定，**中途不要切换节点地区**（易触发风控）[J]；
-- 若提示需要手机号验证 → [章节10 →](/p/chatgpt-subscription-10-...)。
+- 若提示需要手机号验证 → [章节10 →](/p/chatgpt-subscription-10-phone-esim/)。
 
 ## 4.5 登录后必做检查（避免买错账号）
 

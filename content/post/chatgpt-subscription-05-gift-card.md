@@ -84,13 +84,13 @@ slug: "chatgpt-subscription-05-gift-card"
 | 想干什么 | 下一步 |
 |---|---|
 | 买小火箭 | 回到 [01-科学上网VPN](/p/chatgpt-subscription-01-vpn/) 搜索安装即可 |
-| 订阅 ChatGPT Plus | [章节06 →](/p/chatgpt-subscription-06-...) |
+| 订阅 ChatGPT Plus | [章节06 →](/p/chatgpt-subscription-06-plus/) |
 
 ## 5.5 方案 B（有卡用户）：直接绑银行卡
 
 有招行全币种 Visa/万事达卡的用户，可以跳过礼品卡，直接绑卡付款：
 
-- [章节11 →](/p/chatgpt-subscription-11-...) 看绑卡路线和失败原因。
+- [章节11 →](/p/chatgpt-subscription-11-bank-card/) 看绑卡路线和失败原因。
 
 ## 风险与提示（必读）
 

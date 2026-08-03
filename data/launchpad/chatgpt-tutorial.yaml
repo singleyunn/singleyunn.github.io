@@ -1,0 +1,14 @@
+order: 1
+id: chatgpt-subscription-tutorial
+name: ChatGPT Subscription Guide
+nameZh: ChatGPT 订阅教程
+label: 13-chapter guide
+labelZh: 13 章完整路线
+icon: /img/launchpad/chatgpt-tutorial.svg
+iconMode: app
+screenshot: /img/launchpad/chatgpt-tutorial.svg
+screenshotAlt: ChatGPT subscription tutorial launchpad card
+screenshotAltZh: ChatGPT 订阅教程启动台卡片
+article: /p/chatgpt-subscription-00-guide/
+articleZh: /p/chatgpt-subscription-00-guide/
+repository: https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io

@@ -76,7 +76,7 @@ slug: "chatgpt-subscription-08-android-prep"
 1. 打开 **设置 → 账户/账号**；
 2. 点 **添加账号 → Google**（菜单名因品牌而异）[J]；
 3. **或**：打开 Gmail / Google Play，按提示直接登录或注册；
-4. 已有账号 → 直接登录；没有 → [章节02 →](/p/chatgpt-subscription-02-...)（注册 + 安全设置）；
+4. 已有账号 → 直接登录；没有 → [章节02 →](/p/chatgpt-subscription-02-google-account/)（注册 + 安全设置）；
 5. 登录后**先完成安全设置**（两步验证等），再继续订阅 [J]。
 
 ## 8.5 安卓需要 Apple ID 吗？

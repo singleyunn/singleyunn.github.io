@@ -43,7 +43,7 @@ slug: "chatgpt-subscription-06-plus"
 
 > ⚠️ 所以"我用招行 Visa 订阅失败了"这句话**必须说清是哪个通道**——同一张卡在 Apple 侧失败，在 Google Play 侧可能成功 [Y2]。
 
-本章讲 **Apple 通道**（路线 A 的主路线）。Google Play 通道 → [章节09 →](/p/chatgpt-subscription-09-...)；网页通道 → 本章 6.4。
+本章讲 **Apple 通道**（路线 A 的主路线）。Google Play 通道 → [章节09 →](/p/chatgpt-subscription-09-google-play/)；网页通道 → 本章 6.4。
 
 ## 6.2 开始前检查（缺一不可）
 

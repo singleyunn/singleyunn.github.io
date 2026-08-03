@@ -79,8 +79,8 @@ slug: "chatgpt-subscription-03-apple-id"
 
 注册阶段**不要绑任何银行卡**，付款方式选"无" [G]。后面怎么付钱：
 
-- 想买小火箭 → [章节05 →](/p/chatgpt-subscription-05-...)（礼品卡，无卡可用）；
-- 想绑招行卡 → [章节11 →](/p/chatgpt-subscription-11-...)。
+- 想买小火箭 → [章节05 →](/p/chatgpt-subscription-05-gift-card/)（礼品卡，无卡可用）；
+- 想绑招行卡 → [章节11 →](/p/chatgpt-subscription-11-bank-card/)。
 
 ### ② 账单地址填美国（免税州更佳）
 

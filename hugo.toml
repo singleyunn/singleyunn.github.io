@@ -1,41 +1,85 @@
 baseURL = "https://xizhiyun1995-netizen.github.io"
 locale = "zh-CN"
-title = "碳基漫游AI | ChatGPT 订阅保姆级教程"
+title = "碳基漫游 AI | ChatGPT 订阅指南"
+copyright = "碳基漫游 AI"
 theme = "stack"
 paginate = 10
 defaultContentLanguage = "zh"
+hasCJKLanguage = true
 enableRobotsTXT = true
 enableGitInfo = false
 
 [permalinks]
     post = "/p/:slug/"
+    page = "/:slug/"
 
-[menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "首页"
-        url = "/"
-        weight = 1
-    [[menu.main]]
-        identifier = "tutorial"
-        name = "教程总章"
-        url = "/p/chatgpt-subscription-00-guide/"
-        weight = 2
-    [[menu.main]]
-        identifier = "categories"
-        name = "分类"
-        url = "/categories/"
-        weight = 3
+[[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+    params = { icon = "home" }
+
+[[menu.main]]
+    identifier = "tutorial"
+    name = "教程总章"
+    url = "/p/chatgpt-subscription-00-guide/"
+    weight = 2
+    params = { icon = "list-tree" }
+
+[[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+    params = { icon = "folder-bookmark" }
+
+[[menu.main]]
+    identifier = "dashboard"
+    name = "站点仪表盘"
+    url = "/dashboard/"
+    weight = 4
+    params = { icon = "dashboard" }
+
+[[menu.main]]
+    identifier = "about"
+    name = "关于本站"
+    url = "/about/"
+    weight = 5
+    params = { icon = "user" }
+
+[[menu.main]]
+    identifier = "apps"
+    name = "教程启动台"
+    url = "/apps/"
+    weight = 6
+    params = { icon = "folder-bookmark" }
+
+[[menu.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io"
+    weight = 1
+    params = { icon = "brand-github", newTab = true }
+
+[[menu.social]]
+    identifier = "rss"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 2
+    params = { icon = "rss", newTab = true }
 
 [params]
     mainSections = ["post"]
-    description = "ChatGPT 订阅保姆级教程——面向中国大陆小白的 iPhone 路线与安卓路线完整指南"
+    description = "面向中国大陆小白的 ChatGPT 订阅指南，整理 iPhone、Apple、安卓与 Google Play 路线。"
     rssFullContent = true
     SortBy = "weight"
+    favicon = "/img/profile-placeholder.svg"
 
     [params.footer]
         since = 2026
         customText = ""
+        launchDate = "2026-08-02"
 
     [params.dateFormat]
         published = "2006-01-02"
@@ -43,7 +87,9 @@ enableGitInfo = false
 
     [params.sidebar]
         compact = false
-        avatar = ""
+        emoji = "🧭"
+        subtitle = "面向中国大陆小白的 ChatGPT 订阅指南"
+        avatar = "/img/profile-placeholder.svg"
 
     [params.article]
         headingAnchor = false
@@ -58,6 +104,7 @@ enableGitInfo = false
     [params.widgets]
         homepage = [
             { type = "search" },
+            { type = "world-clock" },
             { type = "archives", params = { limit = 5 } },
             { type = "categories", params = { limit = 10 } },
             { type = "tag-cloud", params = { limit = 10 } },
@@ -73,8 +120,33 @@ enableGitInfo = false
 
     [params.imageProcessing]
         [params.imageProcessing.content]
-            enabled = false
+            enabled = true
         [params.imageProcessing.thumbnail]
-            enabled = false
+            enabled = true
         [params.imageProcessing.external]
             timeout = "5s"
+
+[related]
+    includeNewer = true
+    threshold = 60
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+    [[related.indices]]
+        name = "categories"
+        weight = 200
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+    [markup.tableOfContents]
+        endLevel = 4
+        ordered = true
+        startLevel = 2
+    [markup.highlight]
+        noClasses = false
+        lineNos = true
+
+[outputs]
+    home = ["HTML", "RSS"]

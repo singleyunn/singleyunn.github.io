@@ -161,7 +161,7 @@ slug: "chatgpt-subscription-01-vpn"
 ## 本章常见问题
 
 **Q：小火箭多少钱？**
-A：App Store 售价 **2.99 美元**（约 20 多元人民币），一次性买断 [Y1正文]。怎么付钱 → [章节05 →](/p/chatgpt-subscription-05-...)。
+A：App Store 售价 **2.99 美元**（约 20 多元人民币），一次性买断 [Y1正文]。怎么付钱 → [章节05 →](/p/chatgpt-subscription-05-gift-card/)。
 
 **Q：没有小火箭，用别的客户端行吗？**
 A：行。只要能导入机场的订阅链接，用什么客户端都可以。小火箭只是 iOS 上最主流的之一 [Y1正文]。
