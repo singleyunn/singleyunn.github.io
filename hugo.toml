@@ -89,7 +89,7 @@ enableGitInfo = false
         compact = false
         emoji = "🧭"
         subtitle = "探索 AI 工具、效率与数字生活"
-        avatar = "/img/profile-placeholder.svg"
+        avatar = "/img/avatar.jpg"
 
     [params.article]
         headingAnchor = false
