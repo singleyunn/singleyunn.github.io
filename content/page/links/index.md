@@ -12,7 +12,7 @@ links:
   - title: Blog
     description: The Chinese homepage of xizhiyun.
     website: https://xizhiyun1995-netizen.github.io/zh/
-    image: /img/avatar.jpg
+    image: /img/github.png
   - title: GitHub
     description: My code repositories and blog source.
     website: https://github.com/xizhiyun1995-netizen

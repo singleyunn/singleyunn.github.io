@@ -43,7 +43,7 @@ hugo --minify --cleanDestinationDir --ignoreCache
 - `content/page/`：替换关于、链接和其他页面；
 - `data/launchpad/`：替换资源导航条目；
 - `data/photo-wall/` 与 `static/img/gallery/`：替换照片墙；
-- `static/img/avatar.jpg`：当前个人头像；
+- `static/img/github.png`：当前个人头像；
 - `hugo.yaml`：站点名称、简介、语言和服务配置。
 
 ## 发布

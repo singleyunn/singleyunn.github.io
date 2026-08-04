@@ -43,7 +43,7 @@ params:
   sidebar:
     emoji: "😄"
     subtitle: AI tools, practical workflows, and digital life.
-    avatar: /img/avatar.jpg
+    avatar: /img/github.png
   footer:
     since: 2026
     launchDate: "2026-08-01"

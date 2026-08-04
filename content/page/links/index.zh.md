@@ -13,7 +13,7 @@ links:
   - title: 博客主页
     description: xizhiyun 的中文主页。
     website: https://xizhiyun1995-netizen.github.io/zh/
-    image: /img/avatar.jpg
+    image: /img/github.png
   - title: GitHub
     description: 我的代码仓库与博客源码。
     website: https://github.com/xizhiyun1995-netizen
