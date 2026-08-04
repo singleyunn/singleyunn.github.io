@@ -19,7 +19,7 @@
 
 `/admin/` 已部署 Sveltia CMS 管理入口，配置使用 GitHub backend，目标仓库为本仓库的 `main` 分支。分类和标签词表位于 `data/taxonomies/`，供 CMS 的关联字段使用。
 
-首次使用需要登录一个对该仓库有写入权限的 GitHub 账号；保存会直接提交到 `main`，随后由 GitHub Actions 构建并发布 GitHub Pages。仓库中不保存 GitHub token、密码或其他凭据。CMS 前端从 `unpkg.com` 加载，普通公开页面不会加载 CMS 编辑器。
+首次使用需要生成并输入一个对该仓库有写入权限的 GitHub Personal Access Token；令牌只保存在当前浏览器的本地存储，不进入仓库。保存会直接提交到 `main`，随后由 GitHub Actions 构建并发布 GitHub Pages。CMS 前端从 `unpkg.com` 加载，普通公开页面不会加载 CMS 编辑器。
 
 首次登录、编辑和提交测试仍需由仓库所有者在自己的 GitHub 账号下完成；在此之前不要把 `/admin/` 当作无认证的公开投稿入口。
 

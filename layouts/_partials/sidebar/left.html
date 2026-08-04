@@ -84,7 +84,11 @@
                                         {{ $target = . }}
                                     {{ end }}
                                 {{ end }}
-                                <option value="{{ $target.RelPermalink }}" {{ if eq $target.Language.Name $currentLanguageCode }}selected{{ end }}>{{ .Language.Label }}</option>
+                                {{ $languageLabel := .Language.Label }}
+                                {{ if and (eq .Language.Lang "zh") (not (hasPrefix $.Language.Lang "zh")) }}
+                                    {{ $languageLabel = "Chinese (Simplified)" }}
+                                {{ end }}
+                                <option value="{{ $target.RelPermalink }}" {{ if eq $target.Language.Name $currentLanguageCode }}selected{{ end }}>{{ $languageLabel }}</option>
                             {{ end }}
                         </select>
                     </li>

@@ -40,9 +40,9 @@ The public pages do not load the CMS editor. Visiting `/admin/` does load the Sv
 
 ## CMS and GitHub repository
 
-The CMS is an administrative convenience, not a public submission form. Access requires a GitHub account with write permission to the repository. Authorized edits are committed to the public `main` branch and can trigger the GitHub Actions and GitHub Pages deployment workflow.
+The CMS is an administrative convenience, not a public submission form. Access uses a GitHub Personal Access Token from an account with write permission to the repository. Sveltia CMS stores that token in the current browser's local storage for subsequent API requests; it is not committed to this repository. Authorized edits are committed to the public `main` branch and can trigger the GitHub Actions and GitHub Pages deployment workflow.
 
-Do not enter passwords, API keys, verification codes, recovery codes, private keys, cookies, or real user data into article content or CMS fields. Anything committed to this public repository can become publicly accessible. GitHub authentication and GitHub's processing of account information are governed by GitHub's own policies; the site owner does not receive your GitHub password.
+Do not enter passwords, API keys, verification codes, recovery codes, private keys, cookies, or real user data into article content or CMS fields. Anything committed to this public repository can become publicly accessible. GitHub authentication and GitHub's processing of account information are governed by GitHub's own policies; the site owner does not receive your GitHub password or token.
 
 ## Data retention and security
 

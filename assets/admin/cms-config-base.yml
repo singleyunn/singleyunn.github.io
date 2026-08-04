@@ -7,6 +7,7 @@ backend:
   name: github
   repo: xizhiyun1995-netizen/xizhiyun1995-netizen.github.io
   branch: main
+  auth_methods: [token]
 
 site_url: https://xizhiyun1995-netizen.github.io/
 display_url: https://xizhiyun1995-netizen.github.io/

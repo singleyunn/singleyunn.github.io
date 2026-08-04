@@ -40,9 +40,9 @@ comments: false
 
 ## CMS 与 GitHub 仓库
 
-CMS 是管理工具，不是面向公众的投稿表单。使用者必须拥有该 GitHub 仓库的写入权限。授权后的编辑会直接提交到公开仓库的 `main` 分支，并可能触发 GitHub Actions 与 GitHub Pages 部署流程。
+CMS 是管理工具，不是面向公众的投稿表单。使用者需要从拥有该 GitHub 仓库写入权限的账号生成 Personal Access Token，并在 CMS 中输入。Sveltia CMS 会把令牌保存在当前浏览器的本地存储中，用于后续 API 请求；令牌不会提交到仓库。授权后的编辑会直接提交到公开仓库的 `main` 分支，并可能触发 GitHub Actions 与 GitHub Pages 部署流程。
 
-不要把密码、API Key、验证码、恢复代码、私钥、Cookie 或真实用户数据填写到文章正文或 CMS 字段中。提交到公开仓库的内容可能被任何人访问。GitHub 账户认证和账户信息处理遵循 GitHub 自身的政策；站点所有者不会收到你的 GitHub 密码。
+不要把密码、API Key、验证码、恢复代码、私钥、Cookie 或真实用户数据填写到文章正文或 CMS 字段中。提交到公开仓库的内容可能被任何人访问。GitHub 账户认证和账户信息处理遵循 GitHub 自身的政策；站点所有者不会收到你的 GitHub 密码或令牌。
 
 ## 数据保留与安全
 

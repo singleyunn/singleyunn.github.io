@@ -28,7 +28,7 @@
             {{ if $showReadingTime }}{{ partial "helper/icon" "clock" }}<time class="article-time--reading">{{ T "article.readingTime" $Page.ReadingTime }}</time>{{ end }}
         </div>
         {{ end }}
-        {{ if $showTranslations }}<div class="article-meta__translations inline-meta">{{ partial "helper/icon" "language" }}{{ range $Page.Translations }}<a href="{{ .RelPermalink }}" class="link">{{ .Language.Label }}</a>{{ end }}</div>{{ end }}
+        {{ if $showTranslations }}<div class="article-meta__translations inline-meta">{{ partial "helper/icon" "language" }}{{ range $Page.Translations }}{{ $languageLabel := .Language.Label }}{{ if and (eq .Language.Lang "zh") (not (hasPrefix $Page.Language.Lang "zh")) }}{{ $languageLabel = "Chinese (Simplified)" }}{{ end }}<a href="{{ .RelPermalink }}" class="link">{{ $languageLabel }}</a>{{ end }}</div>{{ end }}
         {{ if $showTags }}<div class="article-tags inline-meta">{{ partial "helper/icon" "tag" }}{{ range ($Page.GetTerms "tags") }}<a href="{{ .RelPermalink }}" class="link">{{ .LinkTitle }}</a>{{ end }}</div>{{ end }}
     </footer>
     {{ end }}
