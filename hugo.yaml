@@ -77,8 +77,41 @@ params:
     content: { enabled: true }
 menu:
   social:
-    - { identifier: github, name: GitHub, url: https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io, weight: 1, params: { icon: brand-github, newTab: true } }
-    - { identifier: rss, name: RSS, url: /index.xml, weight: 2, params: { icon: rss, newTab: true } }
+    - identifier: github
+      name: GitHub
+      url: "https://github.com/"
+      weight: 1
+      params: { icon: brand-github, newTab: true }
+    - identifier: x
+      name: X
+      url: "https://x.com/Singlea8uw"
+      weight: 2
+      params: { icon: brand-x, newTab: true }
+    - identifier: youtube
+      name: YouTube
+      url: "https://www.youtube.com/@ZhiyunXi-single"
+      weight: 3
+      params: { icon: brand-youtube, newTab: true }
+    - identifier: douyin
+      name: 抖音
+      url: "https://www.douyin.com/user/self?from_tab_name=main&showTab=post"
+      weight: 4
+      params: { icon: brand-douyin, newTab: true }
+    - identifier: xiaohongshu
+      name: 小红书
+      url: "https://www.xiaohongshu.com/user/profile/68c624be0000000019010fd4"
+      weight: 5
+      params: { icon: brand-xiaohongshu, newTab: true }
+    - identifier: bilibili
+      name: Bilibili
+      url: "https://space.bilibili.com/183432685?spm_id_from=333.1007.0.0"
+      weight: 6
+      params: { icon: brand-bilibili, newTab: true }
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 7
+      params: { icon: rss, newTab: true }
 related:
   includeNewer: true
   threshold: 60
