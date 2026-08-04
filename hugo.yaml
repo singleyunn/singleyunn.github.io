@@ -94,7 +94,7 @@ menu:
       params: { icon: brand-youtube, newTab: true }
     - identifier: douyin
       name: 抖音
-      url: "https://www.douyin.com/user/self?from_tab_name=main&showTab=post"
+      url: "https://www.douyin.com/user/MS4wLjABAAAAihobAUhipbCjeoYAcIGQdcCTlPiMTfGWgX92Qo7dqMiQHbOkimgbAgvfcQ81ZTmc"
       weight: 4
       params: { icon: brand-douyin, newTab: true }
     - identifier: xiaohongshu
