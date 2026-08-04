@@ -1287,43 +1287,16 @@ const getClockParts = (date: Date, timeZone: string): ClockParts => {
     return values as ClockParts;
 };
 
-const getClockZoneOffsetMinutes = (date: Date, timeZone: string) => {
-    const parts = getClockParts(date, timeZone);
-    const wallTimeAsUtc = Date.UTC(
-        parts.year,
-        parts.month - 1,
-        parts.day,
-        parts.hour,
-        parts.minute,
-        parts.second,
-    );
-    const currentSecond = Math.floor(date.getTime() / 1000) * 1000;
-
-    return Math.round((wallTimeAsUtc - currentSecond) / 60000);
-};
-
 const initWorldClocks = () => {
     document.querySelectorAll<HTMLElement>("[data-world-clock]").forEach((widget) => {
         const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
-        const myZone = widget.dataset.timeZone || "UTC";
         const localClock = widget.querySelector<HTMLElement>('[data-clock="local"]');
-        const myClock = widget.querySelector<HTMLElement>('[data-clock="mine"]');
-        if (!localClock || !myClock) return;
-
-        const formatDifference = (differenceInMinutes: number) => {
-            const hours = Math.round((differenceInMinutes / 60) * 10) / 10;
-            const absolute = Math.abs(hours);
-            const number = Number.isInteger(absolute) ? String(absolute) : absolute.toFixed(1);
-            const sign = hours > 0 ? "+" : hours < 0 ? "−" : "";
-
-            return `${sign}${number}`;
-        };
+        if (!localClock) return;
 
         const paintClock = (
             clock: HTMLElement,
             now: Date,
             timeZone: string,
-            differenceInMinutes: number,
         ) => {
             const parts = getClockParts(now, timeZone);
             const minuteAngle = parts.minute * 6;
@@ -1340,15 +1313,11 @@ const initWorldClocks = () => {
                 .querySelector<HTMLElement>(".world-clock-widget__hand--second")
                 ?.style.setProperty("--clock-rotation", `${secondAngle}deg`);
 
-            const difference = formatDifference(differenceInMinutes);
-            const differenceElement = clock.querySelector<HTMLElement>(".world-clock-widget__difference");
-            if (differenceElement) differenceElement.textContent = difference;
-
             const label = clock.querySelector<HTMLElement>(".world-clock-widget__label")?.textContent?.trim() || "";
             const time = [parts.hour, parts.minute, parts.second]
                 .map((part) => String(part).padStart(2, "0"))
                 .join(":");
-            const accessibleLabel = `${label}: ${time}, ${difference}`;
+            const accessibleLabel = `${label}: ${time}`;
             const dial = clock.querySelector<HTMLElement>(".world-clock-widget__dial");
             dial?.classList.toggle("is-night", parts.hour < 7 || parts.hour >= 19);
             dial?.setAttribute("aria-label", accessibleLabel);
@@ -1357,11 +1326,7 @@ const initWorldClocks = () => {
 
         const tick = () => {
             const now = new Date();
-            const localOffset = -now.getTimezoneOffset();
-            const myOffset = getClockZoneOffsetMinutes(now, myZone);
-
-            paintClock(localClock, now, localZone, 0);
-            paintClock(myClock, now, myZone, myOffset - localOffset);
+            paintClock(localClock, now, localZone);
         };
 
         tick();

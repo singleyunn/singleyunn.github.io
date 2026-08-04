@@ -168,20 +168,6 @@ __SINGLE_LANGUAGE_COLLECTION__
       - { label: Simplified Chinese article URL, name: articleZh, widget: string, required: false }
       - { label: Source repository URL, name: repository, widget: string, required: false }
 
-  - name: world_clock
-    label: World clock
-    files:
-      - name: settings
-        label: World clock settings
-        file: /data/widgets.yaml
-        format: yaml
-        fields:
-          - label: World clock
-            name: worldClock
-            widget: object
-            fields:
-              - { label: My time zone, name: timeZone, widget: string, hint: Use an IANA time zone such as UTC or Asia/Shanghai. }
-
   # A shared vocabulary for post categories and tags. Relation fields above
   # read from these lists, so additions become selectable in every post editor.
   - name: taxonomies
