@@ -1,8 +1,8 @@
-# 碳基漫游 AI · Liquid Stack 模板
+# xizhiyun · Liquid Stack 模板
 
 这是基于朋友小景开源的 [Liquid Stack](https://github.com/Jingyuan-Zheng/Liquid-Stack) 整理的 Hugo 个人博客模板，部署到 GitHub Pages。
 
-当前公开站点沿用 Liquid Stack 的模块结构，但已替换为“碳基漫游 AI”的文章、资源、照片墙和仪表盘内容；原来的 ChatGPT 订阅教程已移出公开内容，教程源文件和此前提交仍保留在本地备份 / Git 历史中。
+当前公开站点沿用 Liquid Stack 的模块结构，但已替换为“xizhiyun”的文章、资源、照片墙和仪表盘内容；原来的 ChatGPT 订阅教程已移出公开内容，教程源文件和此前提交仍保留在本地备份 / Git 历史中。
 
 ## 已接入模块
 

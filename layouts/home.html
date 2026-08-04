@@ -12,7 +12,7 @@
         {{ $announcementOpenLabel := cond $isChinese "打开网站公告" "Open website announcement" }}
         {{ $announcementUnreadLabel := cond $isChinese "打开网站公告，1 条未读" "Open website announcement, 1 unread" }}
         {{ $announcementCloseLabel := cond $isChinese "关闭网站公告" "Close website announcement" }}
-        <figure class="home-profile__avatar" data-home-announcement data-announcement-id="carbon-roaming-ai-welcome-2026-08">
+        <figure class="home-profile__avatar" data-home-announcement data-announcement-id="xizhiyun-welcome-2026-08">
             <button class="home-profile__announcement-toggle" type="button" aria-expanded="false" aria-controls="home-profile-announcement" aria-label="{{ $announcementUnreadLabel }}" data-home-announcement-toggle data-announcement-open-label="{{ $announcementOpenLabel }}" data-announcement-close-label="{{ $announcementCloseLabel }}">
                 <img src="{{ .Permalink }}" width="{{ .Width }}" height="{{ .Height }}" loading="eager" alt="{{ $.Site.Title }}">
                 <span class="home-profile__announcement-badge" data-home-announcement-badge aria-hidden="true">1</span>

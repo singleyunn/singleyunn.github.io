@@ -1,7 +1,7 @@
 ---
 title: About
 slug: about
-description: Meet xizhiyun and learn about the Carbon Roaming AI blog.
+description: Meet xizhiyun and learn about the xizhiyun blog.
 comments: false
 license: false
 toc: false
@@ -29,9 +29,9 @@ menu:
 </style>
 
 <main class="about-page">
-<header class="about-hero"><p class="about-kicker">About · Carbon Roaming AI</p><h1>xizhiyun</h1><p class="about-profile">This is my personal blog. I use it to record AI tools, practical workflows, and the real problems that appear in everyday digital life.</p></header>
+<header class="about-hero"><p class="about-kicker">About · xizhiyun</p><h1>xizhiyun</h1><p class="about-profile">This is my personal blog. I use it to record AI tools, practical workflows, and the real problems that appear in everyday digital life.</p></header>
 <nav class="about-nav" aria-label="Page sections"><a href="#focus">What I explore</a><a href="#site">About this site</a><a href="#contact">Find me</a></nav>
 <section id="focus" class="about-section"><h2 class="about-heading">What I explore</h2><div class="about-grid"><article class="about-card"><h3>AI tools</h3><p>Tool choices, hands-on notes, and workflows that are useful for ordinary users.</p></article><article class="about-card"><h3>Practical efficiency</h3><p>Turning scattered experiences into steps and checklists that can be reused.</p></article><article class="about-card"><h3>Digital life</h3><p>Real questions around accounts, devices, subscriptions, and cross-platform use.</p></article><article class="about-card"><h3>Ongoing notes</h3><p>Keep the verified parts, improve them over time, and avoid pretending everything is final.</p></article></div></section>
-<section id="site" class="about-section"><h2 class="about-heading">About this site</h2><p>Carbon Roaming AI is a personal blog that is still being built. It uses Hugo, Liquid Stack, GitHub Actions, and GitHub Pages; the content will grow through real use.</p><p>The articles, launchpad, photo wall, and links page will gradually be replaced with my own material. Any remaining demo content is temporary placeholder content.</p></section>
+<section id="site" class="about-section"><h2 class="about-heading">About this site</h2><p>xizhiyun is a personal blog that is still being built. It uses Hugo, Liquid Stack, GitHub Actions, and GitHub Pages; the content will grow through real use.</p><p>The articles, launchpad, photo wall, and links page will gradually be replaced with my own material. Any remaining demo content is temporary placeholder content.</p></section>
 <section id="contact" class="about-section"><h2 class="about-heading">Find me</h2><ul class="about-links"><li><a href="https://xizhiyun1995-netizen.github.io/zh/" rel="me">Blog <span>xizhiyun1995-netizen.github.io/zh/</span></a></li><li><a href="https://github.com/xizhiyun1995-netizen" target="_blank" rel="me noopener">GitHub <span>@xizhiyun1995-netizen</span></a></li><li><a href="mailto:xizhiyun1995@gmail.com">Email <span>xizhiyun1995@gmail.com</span></a></li><li><a href="https://x.com/Singlea8uw" target="_blank" rel="me noopener">X <span>@Singlea8uw</span></a></li></ul></section>
 </main>

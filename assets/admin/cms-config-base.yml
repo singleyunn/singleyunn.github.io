@@ -11,7 +11,7 @@ backend:
 
 site_url: https://xizhiyun1995-netizen.github.io/
 display_url: https://xizhiyun1995-netizen.github.io/
-app_title: 碳基漫游 AI CMS
+app_title: xizhiyun CMS
 logo:
   src: site-logo.png
   show_in_header: true

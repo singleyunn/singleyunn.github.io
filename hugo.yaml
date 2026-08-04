@@ -1,8 +1,8 @@
 baseURL: "https://xizhiyun1995-netizen.github.io/"
 canonifyURLs: true
-title: 碳基漫游 AI
+title: xizhiyun
 theme: stack
-copyright: "碳基漫游 AI"
+copyright: "xizhiyun"
 defaultContentLanguage: en
 hasCJKLanguage: true
 mediaTypes:

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
 <title id="title">Pi Coding Agent 从零到进阶：快捷键与启动界面速查</title>
-<desc id="desc">碳基漫游 AI · AI 工具</desc>
+<desc id="desc">xizhiyun · AI 工具</desc>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4e5fbd"/><stop offset="1" stop-color="#a9b7f2"/></linearGradient></defs>
 <rect width="1200" height="630" fill="url(#bg)"/>
 <circle cx="1030" cy="100" r="190" fill="#fff" fill-opacity=".13"/>
 <circle cx="1120" cy="560" r="230" fill="#fff" fill-opacity=".09"/>
 <path d="M0 560C220 470 340 640 560 520s350-105 640 0v110H0z" fill="#fff" fill-opacity=".08"/>
-<text x="78" y="135" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" letter-spacing="5">碳基漫游 AI · AI 工具</text>
+<text x="78" y="135" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" letter-spacing="5">xizhiyun · AI 工具</text>
 <text x="80" y="330" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800">Pi Coding Agent 从零到…</text>
 <text x="82" y="485" fill="#fff" fill-opacity=".84" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="28">记录工具、方法与可复用的实践</text>
 </svg>

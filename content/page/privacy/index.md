@@ -11,7 +11,7 @@ comments: false
 
 ## Scope
 
-This policy covers the public pages of **Carbon-Based Roaming AI** at [xizhiyun1995-netizen.github.io](https://xizhiyun1995-netizen.github.io/) and the `/admin/` CMS entry point.
+This policy covers the public pages of **xizhiyun** at [xizhiyun1995-netizen.github.io](https://xizhiyun1995-netizen.github.io/) and the `/admin/` CMS entry point.
 
 This is a static Hugo site published through GitHub Pages. It is a practical description of the current configuration, not a promise that future services will have the same data practices. If analytics, comments, forms, newsletters, advertising, payments, or other third-party services are enabled later, this policy should be updated first.
 

@@ -10,7 +10,7 @@ menu:
     params: { icon: link }
 links:
   - title: Blog
-    description: The Chinese homepage of Carbon Roaming AI.
+    description: The Chinese homepage of xizhiyun.
     website: https://xizhiyun1995-netizen.github.io/zh/
     image: /img/avatar.jpg
   - title: GitHub

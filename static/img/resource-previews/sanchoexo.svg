@@ -6,7 +6,7 @@
   <circle cx="1030" cy="110" r="210" fill="#fff" fill-opacity=".14"/>
   <circle cx="1090" cy="620" r="250" fill="#fff" fill-opacity=".1"/>
   <path d="M0 610C210 500 360 700 610 565s380-78 590 25v130H0z" fill="#fff" fill-opacity=".08"/>
-  <text x="82" y="115" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="28" letter-spacing="5">CARBON ROAMING AI · RESOURCE</text>
+  <text x="82" y="115" fill="#fff" fill-opacity=".82" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="28" letter-spacing="5">xizhiyun · RESOURCE</text>
   <text x="82" y="340" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="78" font-weight="800">SanchoExo</text>
   <text x="86" y="430" fill="#fff" fill-opacity=".9" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="38">本地 AI 数据</text>
   <text x="86" y="605" fill="#fff" fill-opacity=".78" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="25">在线工具与网站入口 · 请自行核对服务条款</text>

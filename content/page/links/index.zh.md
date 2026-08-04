@@ -11,7 +11,7 @@ menu:
     params: { icon: link }
 links:
   - title: 博客主页
-    description: 碳基漫游 AI 的中文主页。
+    description: xizhiyun 的中文主页。
     website: https://xizhiyun1995-netizen.github.io/zh/
     image: /img/avatar.jpg
   - title: GitHub

@@ -113,7 +113,7 @@ https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak
 
 先做出第一个版本，再在真实使用中继续迭代。
 
-> 内容由"碳基漫游 AI"整理发布，用于个人学习与记录。原作者观点不代表本账号立场。
+> 内容由"xizhiyun"整理发布，用于个人学习与记录。原作者观点不代表本账号立场。
 
 ## 参考
 
