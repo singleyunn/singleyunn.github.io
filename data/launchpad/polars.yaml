@@ -8,7 +8,7 @@ category: Rust / DataFrame
 categoryZh: Rust / DataFrame
 description: Chinese documentation for Polars, a fast DataFrame library written in Rust.
 descriptionZh: Polars 中文用户指南：用 Rust 编写的高性能 DataFrame 数据处理库文档。
-icon: "https://docs.polars.org.cn/assets/images/favicon.png"
+icon: "/img/launchpad/polars.png"
 iconMode: app
 screenshot: "/img/resource-previews/polars.svg"
 screenshotAlt: Polars documentation preview

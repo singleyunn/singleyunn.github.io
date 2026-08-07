@@ -1,7 +1,8 @@
 order: 14
 id: gallery-04-02
-image: "/img/gallery/04-02.jpg"
-title: "Water park · summer play · 02"
-titleZh: "水上乐园、夏日玩水 · 02"
-description: "A visual note from the Water park · summer play series."
-descriptionZh: "水上乐园、夏日玩水系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-14.jpg"
+title: "AI image study · 14"
+titleZh: "AI 生图作品 · 14"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

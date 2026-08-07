@@ -1,7 +1,8 @@
 order: 12
 id: gallery-03-04
-image: "/img/gallery/03-04.jpg"
-title: "Close portraits on the grass · 04"
-titleZh: "草地近距离互动写真 · 04"
-description: "A visual note from the Close portraits on the grass series."
-descriptionZh: "草地近距离互动写真系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-12.jpg"
+title: "AI image study · 12"
+titleZh: "AI 生图作品 · 12"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

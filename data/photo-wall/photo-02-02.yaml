@@ -1,7 +1,8 @@
 order: 6
 id: gallery-02-02
-image: "/img/gallery/02-02.jpg"
-title: "Sheer dress on the grass · summer cinema · 02"
-titleZh: "草地薄纱裙、夏日电影感 · 02"
-description: "A visual note from the Sheer dress on the grass · summer cinema series."
-descriptionZh: "草地薄纱裙、夏日电影感系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-06.jpg"
+title: "AI image study · 06"
+titleZh: "AI 生图作品 · 06"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

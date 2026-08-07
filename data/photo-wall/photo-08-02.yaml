@@ -1,7 +1,8 @@
 order: 30
 id: gallery-08-02
-image: "/img/gallery/08-02.jpg"
-title: "Water festival snapshots · 02"
-titleZh: "泼水节抓拍 · 02"
-description: "A visual note from the Water festival snapshots series."
-descriptionZh: "泼水节抓拍系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-30.jpg"
+title: "AI image study · 30"
+titleZh: "AI 生图作品 · 30"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

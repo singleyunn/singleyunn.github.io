@@ -1,7 +1,8 @@
 order: 27
 id: gallery-07-03
-image: "/img/gallery/07-03.png"
-title: "Old-town street photography · white top · 03"
-titleZh: "古镇街拍、白色上衣 · 03"
-description: "A visual note from the Old-town street photography · white top series."
-descriptionZh: "古镇街拍、白色上衣系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-27.jpg"
+title: "AI image study · 27"
+titleZh: "AI 生图作品 · 27"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

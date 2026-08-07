@@ -124,6 +124,11 @@ __SINGLE_LANGUAGE_COLLECTION__
     fields:
       - { label: Order, name: order, widget: number, value_type: int }
       - { label: Stable ID, name: id, widget: string, hint: Keep this unchanged after publishing so saved photo positions continue to work. }
+      - label: Album module
+        name: module
+        widget: select
+        options: [ai-image-picks]
+        default: ai-image-picks
       - { label: Image, name: image, widget: image }
       - { label: English title, name: title, widget: string }
       - { label: Simplified Chinese title, name: titleZh, widget: string, required: false }

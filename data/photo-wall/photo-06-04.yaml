@@ -1,7 +1,8 @@
 order: 24
 id: gallery-06-04
-image: "/img/gallery/06-04.jpg"
-title: "Outdoor Lolita · sweet and cool · 04"
-titleZh: "户外洛丽塔甜酷服装 · 04"
-description: "A visual note from the Outdoor Lolita · sweet and cool series."
-descriptionZh: "户外洛丽塔甜酷服装系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-24.jpg"
+title: "AI image study · 24"
+titleZh: "AI 生图作品 · 24"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

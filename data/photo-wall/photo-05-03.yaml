@@ -1,7 +1,8 @@
 order: 19
 id: gallery-05-03
-image: "/img/gallery/05-03.jpg"
-title: "Wet hair by the sea · light dress · 03"
-titleZh: "海水湿发、浅色长裙 · 03"
-description: "A visual note from the Wet hair by the sea · light dress series."
-descriptionZh: "海水湿发、浅色长裙系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-19.jpg"
+title: "AI image study · 19"
+titleZh: "AI 生图作品 · 19"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

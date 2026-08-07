@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">AI Image Picks</title>
+  <desc id="desc">A picture frame with sparkles</desc>
+  <defs>
+    <linearGradient id="background" x1="24" y1="20" x2="232" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f6d8c5"/>
+      <stop offset="1" stop-color="#b7c9df"/>
+    </linearGradient>
+    <linearGradient id="picture" x1="54" y1="78" x2="202" y2="194" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8c6aa"/>
+      <stop offset="1" stop-color="#7c9fbd"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#background)"/>
+  <rect x="38" y="55" width="180" height="150" rx="27" fill="#fff" fill-opacity=".88" transform="rotate(-5 38 55)"/>
+  <rect x="57" y="74" width="142" height="112" rx="16" fill="url(#picture)" transform="rotate(-5 57 74)"/>
+  <circle cx="157" cy="112" r="17" fill="#fff" fill-opacity=".72"/>
+  <path d="m61 171 38-37 24 21 27-29 51 47H61Z" fill="#fff" fill-opacity=".82"/>
+  <path d="M204 38v44M182 60h44" stroke="#fff" stroke-linecap="round" stroke-width="12"/>
+  <path d="m62 37 0 24M50 49h24" stroke="#fff" stroke-linecap="round" stroke-width="8"/>
+  <circle cx="211" cy="151" r="6" fill="#fff"/>
+</svg>

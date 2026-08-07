@@ -1,7 +1,8 @@
 order: 31
 id: gallery-09-01
-image: "/img/gallery/09-01.jpg"
-title: "Jeans by the lake · 01"
-titleZh: "湖边牛仔裤穿搭 · 01"
-description: "A visual note from the Jeans by the lake series."
-descriptionZh: "湖边牛仔裤穿搭系列视觉记录。"
+module: ai-image-picks
+image: "/img/gallery/gallery-31.jpg"
+title: "AI image study · 31"
+titleZh: "AI 生图作品 · 31"
+description: "A selected AI-generated image from the personal site."
+descriptionZh: "个人站精选的 AI 生成图片。"

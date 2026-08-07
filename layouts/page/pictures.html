@@ -11,6 +11,23 @@
         {{ end }}
     {{ end }}
     {{ $configuredPictures = sort $configuredPictures "order" }}
+    {{ $modules := slice }}
+    {{ with index hugo.Data "photo-modules" }}
+        {{ range . }}
+            {{ $modules = $modules | append . }}
+        {{ end }}
+    {{ end }}
+    {{ $modules = sort $modules "order" }}
+    {{ if eq (len $modules) 0 }}
+        {{ $modules = $modules | append (dict
+            "id" "default"
+            "name" "Photo wall"
+            "nameZh" "照片墙"
+            "description" "A collection of visual notes."
+            "descriptionZh" "视觉记录合集。"
+            "icon" "/img/gallery/ai-image-picks.svg"
+        ) }}
+    {{ end }}
     {{ $gallery := slice }}
 
     {{ if gt (len $configuredPictures) 0 }}
@@ -29,6 +46,7 @@
                 {{ end }}
                 {{ $gallery = $gallery | append (dict
                     "Id" (default (printf "picture-%d" $index) $picture.id)
+                    "ModuleId" (default "default" $picture.module)
                     "Title" $title
                     "Description" $description
                     "Date" (default "" $picture.date)
@@ -44,6 +62,7 @@
                 {{ if $image }}
                     {{ $gallery = $gallery | append (dict
                         "Id" .RelPermalink
+                        "ModuleId" "default"
                         "Title" .Title
                         "Description" .Description
                         "Date" (.Date.Format "2006-01-02")
@@ -57,31 +76,57 @@
 
     <article class="main-article pictures-article">
         {{ if gt (len $gallery) 0 }}
-            <section class="photo-gallery" data-photo-gallery aria-label="{{ .Title }}">
-                <div class="photo-gallery__backdrop" data-gallery-close hidden></div>
-
-                {{ range $index, $item := $gallery }}
-                    <figure class="photo-gallery__item" data-gallery-item data-gallery-id="{{ printf "%s-%d" $item.Id $index }}" style="--gallery-order: {{ $index }};">
-                        <div class="photo-gallery__image-frame">
-                            <img
-                                src="{{ $item.ImagePermalink }}"
-                                alt="{{ $item.Title }}"
-                                loading="{{ cond (lt $index 6) "eager" "lazy" }}"
-                                decoding="async"
-                            >
-                        </div>
-                        <figcaption class="photo-gallery__caption">
-                            {{ if $item.Link }}
-                                <a href="{{ $item.Link }}">{{ $item.Title }}</a>
-                            {{ else }}
-                                <strong>{{ $item.Title }}</strong>
+            {{ range $moduleIndex, $module := $modules }}
+                {{ $modulePictures := where $gallery "ModuleId" (index $module "id") }}
+                {{ if gt (len $modulePictures) 0 }}
+                    {{ $moduleTitle := default (cond $isChinese "照片墙" "Photo wall") (index $module "name") }}
+                    {{ if $isChinese }}
+                        {{ with index $module "nameZh" }}{{ $moduleTitle = . }}{{ end }}
+                    {{ end }}
+                    {{ $moduleDescription := default "" (index $module "description") }}
+                    {{ if $isChinese }}
+                        {{ with index $module "descriptionZh" }}{{ $moduleDescription = . }}{{ end }}
+                    {{ end }}
+                    <section class="photo-module" data-photo-module="{{ index $module "id" }}" aria-labelledby="photo-module-title-{{ $moduleIndex }}">
+                        <header class="photo-module__header">
+                            {{ with index $module "icon" }}
+                                <img class="photo-module__icon" src="{{ relURL . }}" alt="" width="72" height="72" loading="eager">
                             {{ end }}
-                            {{ with $item.Date }}<time class="photo-gallery__date" datetime="{{ . }}" data-gallery-date>{{ . }}</time>{{ end }}
-                            {{ with $item.Description }}<p>{{ . }}</p>{{ end }}
-                        </figcaption>
-                    </figure>
+                            <div class="photo-module__copy">
+                                <p class="photo-module__eyebrow">{{ cond $isChinese "相册模块" "Album module" }}</p>
+                                <h2 id="photo-module-title-{{ $moduleIndex }}">{{ $moduleTitle }}</h2>
+                                {{ with $moduleDescription }}<p>{{ . }}</p>{{ end }}
+                            </div>
+                            <span class="photo-module__count">{{ len $modulePictures }} {{ cond $isChinese "张图片" "images" }}</span>
+                        </header>
+                        <section class="photo-gallery" data-photo-gallery aria-label="{{ $moduleTitle }}">
+                            <div class="photo-gallery__backdrop" data-gallery-close hidden></div>
+
+                            {{ range $itemIndex, $item := $modulePictures }}
+                                <figure class="photo-gallery__item" data-gallery-item data-gallery-id="{{ printf "%s-%s-%d" (index $module "id") $item.Id $itemIndex }}" style="--gallery-order: {{ $itemIndex }};">
+                                    <div class="photo-gallery__image-frame">
+                                        <img
+                                            src="{{ $item.ImagePermalink }}"
+                                            alt="{{ $item.Title }}"
+                                            loading="{{ cond (lt $itemIndex 6) "eager" "lazy" }}"
+                                            decoding="async"
+                                        >
+                                    </div>
+                                    <figcaption class="photo-gallery__caption">
+                                        {{ if $item.Link }}
+                                            <a href="{{ $item.Link }}">{{ $item.Title }}</a>
+                                        {{ else }}
+                                            <strong>{{ $item.Title }}</strong>
+                                        {{ end }}
+                                        {{ with $item.Date }}<time class="photo-gallery__date" datetime="{{ . }}" data-gallery-date>{{ . }}</time>{{ end }}
+                                        {{ with $item.Description }}<p>{{ . }}</p>{{ end }}
+                                    </figcaption>
+                                </figure>
+                            {{ end }}
+                        </section>
+                    </section>
                 {{ end }}
-            </section>
+            {{ end }}
         {{ else }}
             <div class="photo-gallery-empty">
                 {{ cond $isChinese "还没有添加照片。" "No photos have been added yet." }}
