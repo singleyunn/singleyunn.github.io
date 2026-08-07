@@ -1,6 +1,6 @@
 ---
 title: Photos
-description: A draggable visual wall powered by editable data files.
+description: A collection of visual modules and AI-generated image galleries.
 slug: pictures
 url: /pictures/
 layout: pictures

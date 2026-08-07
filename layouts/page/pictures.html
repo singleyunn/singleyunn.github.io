@@ -151,12 +151,7 @@
                 </section>
             {{ end }}
         {{ else }}
-            <section class="photo-library-index" aria-labelledby="photo-library-title">
-                <header class="photo-library-header">
-                    <p class="photo-module__eyebrow">{{ cond $isChinese "相册合集" "Album collections" }}</p>
-                    <h1 id="photo-library-title">{{ .Title }}</h1>
-                    <p>{{ .Description }}</p>
-                </header>
+            <section class="photo-library-index" aria-label="{{ cond $isChinese "相册合集" "Album collections" }}">
                 {{ if gt (len $gallery) 0 }}
                     <div class="photo-module-grid">
                         {{ range $module := $modules }}

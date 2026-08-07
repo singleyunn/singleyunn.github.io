@@ -1,6 +1,6 @@
 ---
 title: 相册
-description: 由可编辑数据文件驱动的可拖动视觉墙。
+description: 按合集整理的视觉作品与 AI 生图相册。
 slug: pictures
 url: /zh/pictures/
 layout: pictures
