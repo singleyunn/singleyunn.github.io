@@ -4,96 +4,41 @@
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
     {{ $visible := where $pages "Params.hidden" "ne" true }}
     {{ $pag := .Paginate $visible }}
-    {{ $apps := slice }}
-    {{ with hugo.Data.launchpad }}
-        {{ range . }}{{ $apps = $apps | append . }}{{ end }}
-    {{ end }}
-    {{ $apps = sort $apps "order" }}
-    {{ $pictures := slice }}
-    {{ with index hugo.Data "photo-wall" }}
-        {{ range . }}{{ $pictures = $pictures | append . }}{{ end }}
-    {{ end }}
-    {{ $pictures = sort $pictures "order" }}
-    {{ $pictureCover := "" }}
-    {{ if gt (len $pictures) 0 }}{{ $pictureCover = (index $pictures 0).image }}{{ end }}
-
-    <article class="material-home">
-        <section class="material-home__hero" aria-labelledby="material-home-title">
-            <div class="material-home__hero-copy">
-                <p class="material-eyebrow">{{ cond $isChinese "欢迎来到 · 个人空间" "WELCOME BACK · PERSONAL SPACE" }}</p>
-                <h1 id="material-home-title">{{ cond $isChinese "你好，" "Hello," }}<br>{{ .Site.Title }}</h1>
-                <p>{{ .Site.Params.sidebar.subtitle }}</p>
-            </div>
-            <aside class="material-home__hero-note">
-                <span class="material-home__hero-note-icon" aria-hidden="true">✦</span>
-                <strong>{{ cond $isChinese "今天也在整理一些东西" "Still curating" }}</strong>
+    {{ $apps := slice }}{{ with hugo.Data.launchpad }}{{ range . }}{{ $apps = $apps | append . }}{{ end }}{{ end }}{{ $apps = sort $apps "order" }}
+    {{ $pictures := slice }}{{ with index hugo.Data "photo-wall" }}{{ range . }}{{ $pictures = $pictures | append . }}{{ end }}{{ end }}{{ $pictures = sort $pictures "order" }}
+    <section class="home-profile" aria-labelledby="home-profile-title">
+        {{ with .Site.Params.sidebar.avatar }}{{ $avatar := partial "helper/image" (dict "Image" . "Resources" resources "Context" $) }}{{ with $avatar }}
+        {{ $announcementTitle := cond $isChinese "网站公告" "Website announcement" }}
+        {{ $announcementOpenLabel := cond $isChinese "打开网站公告" "Open website announcement" }}
+        {{ $announcementUnreadLabel := cond $isChinese "打开网站公告，1 条未读" "Open website announcement, 1 unread" }}
+        {{ $announcementCloseLabel := cond $isChinese "关闭网站公告" "Close website announcement" }}
+        <figure class="home-profile__avatar" data-home-announcement data-announcement-id="xizhiyun-welcome-2026-08">
+            <button class="home-profile__announcement-toggle" type="button" aria-expanded="false" aria-controls="home-profile-announcement" aria-label="{{ $announcementUnreadLabel }}" data-home-announcement-toggle data-announcement-open-label="{{ $announcementOpenLabel }}" data-announcement-close-label="{{ $announcementCloseLabel }}">
+                <img src="{{ .Permalink }}" width="{{ .Width }}" height="{{ .Height }}" loading="eager" alt="{{ $.Site.Title }}">
+                <span class="home-profile__announcement-badge" data-home-announcement-badge aria-hidden="true">1</span>
+            </button>
+            <button class="home-profile__emoji home-profile__management-toggle" type="button" aria-expanded="false" aria-controls="home-profile-management-menu" aria-label="{{ cond $isChinese "打开网站管理选单" "Open site management menu" }}" data-sidebar-management-toggle>{{ $.Site.Params.sidebar.emoji }}</button>
+            {{ partial "sidebar/management-menu.html" (dict "Context" $ "MenuID" "home-profile-management-menu") }}
+            <div class="home-profile__announcement-bubble" id="home-profile-announcement" data-home-announcement-bubble role="note" aria-live="polite" hidden>
+                <strong>{{ $announcementTitle }}</strong>
                 {{ if $isChinese }}
-                    <p>把真实使用过的工具、经验和视觉资料，慢慢整理成可以复用的内容。</p>
+                    <p>这里记录 AI 工具、效率实践、数字生活和我正在整理的资源。内容会从真实使用出发，慢慢补充成可复用的经验。</p>
                 {{ else }}
-                    <p>Turning real tools, workflows, and visual notes into reusable content.</p>
+                    <p>This is a personal space for AI tools, practical workflows, digital life, and the resources I am collecting. The site will grow from real use and reusable notes.</p>
                 {{ end }}
-            </aside>
-        </section>
-
-        <section class="material-home__stats" aria-label="{{ cond $isChinese "站点概览" "Site overview" }}">
-            <div><strong>{{ len $visible }}</strong><span>{{ cond $isChinese "篇文章与笔记" "articles and notes" }}</span></div>
-            <div><strong>{{ len $apps }}</strong><span>{{ cond $isChinese "个资源入口" "resource entries" }}</span></div>
-            <div><strong>{{ len $pictures }}</strong><span>{{ cond $isChinese "张视觉记录" "visual notes" }}</span></div>
-        </section>
-
-        <section class="material-home__section" aria-labelledby="material-home-modules">
-            <div class="material-home__section-heading">
-                <div><p class="material-eyebrow">{{ cond $isChinese "快速浏览" "QUICK BROWSE" }}</p><h2 id="material-home-modules">{{ cond $isChinese "站点模块" "Site modules" }}</h2></div>
-                <span>{{ cond $isChinese "从这里开始" "Start here" }}</span>
+                <time class="home-profile__announcement-date" datetime="2026-08-02">{{ cond $isChinese "2026年8月2日" "2 Aug 2026" }}</time>
             </div>
-            <div class="material-module-grid">
-                <a class="material-module-card material-module-card--resource" href="{{ "apps/" | relLangURL }}">
-                    <div class="material-module-card__icon" aria-hidden="true">
-                        {{ range first 3 $apps }}<img src="{{ relURL .icon }}" alt="" loading="lazy">{{ end }}
-                    </div>
-                    <p class="material-card-label">{{ cond $isChinese "资源导航" "RESOURCE DIRECTORY" }}</p>
-                    <h3>{{ cond $isChinese "浏览在线资源" "Browse resources" }}</h3>
-                    <p>{{ cond $isChinese "整理正在使用或值得收藏的工具与网站入口。" "Tools and websites worth keeping close." }}</p>
-                    <span class="material-module-card__arrow" aria-hidden="true">→</span>
-                </a>
-                {{ if gt (len $pictures) 0 }}
-                    <a class="material-module-card material-module-card--image" href="{{ "pictures/" | relLangURL }}">
-                        <div class="material-module-card__cover"><img src="{{ relURL $pictureCover }}" alt="" loading="lazy"></div>
-                        <p class="material-card-label">{{ cond $isChinese "视觉合集" "VISUAL COLLECTION" }}</p>
-                        <h3>{{ cond $isChinese "AI 生图精选" "AI Image Picks" }}</h3>
-                        <p>{{ cond $isChinese "进入独立合集，浏览个人站精选视觉作品。" "Open the collection of selected visual experiments." }}</p>
-                        <span class="material-module-card__arrow" aria-hidden="true">→</span>
-                    </a>
-                {{ end }}
-                <a class="material-module-card material-module-card--plain" href="{{ "about/" | relLangURL }}">
-                    <div class="material-module-card__icon material-module-card__icon--plain" aria-hidden="true">◌</div>
-                    <p class="material-card-label">{{ cond $isChinese "关于本站" "ABOUT" }}</p>
-                    <h3>{{ cond $isChinese "了解 xizhiyun" "Meet xizhiyun" }}</h3>
-                    <p>{{ cond $isChinese "了解站点的内容方向、技术栈和维护方式。" "The story, stack, and principles behind this site." }}</p>
-                    <span class="material-module-card__arrow" aria-hidden="true">→</span>
-                </a>
-                <a class="material-module-card material-module-card--plain" href="{{ "dashboard/" | relLangURL }}">
-                    <div class="material-module-card__icon material-module-card__icon--plain" aria-hidden="true">⌁</div>
-                    <p class="material-card-label">{{ cond $isChinese "站点数据" "SITE DATA" }}</p>
-                    <h3>{{ cond $isChinese "查看仪表盘" "View dashboard" }}</h3>
-                    <p>{{ cond $isChinese "查看文章、分类、标签和站点运行状态。" "Articles, categories, tags, and runtime details." }}</p>
-                    <span class="material-module-card__arrow" aria-hidden="true">→</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="material-home__section material-home__latest" aria-labelledby="material-home-latest">
-            <div class="material-home__section-heading"><div><p class="material-eyebrow">{{ cond $isChinese "持续更新" "RECENT NOTES" }}</p><h2 id="material-home-latest">{{ cond $isChinese "最新文章" "Latest notes" }}</h2></div><a href="{{ "archives/" | relLangURL }}">{{ cond $isChinese "查看全部" "View all" }} →</a></div>
-            <div class="material-post-list">
-                {{ range first 6 $pag.Pages }}
-                    <a class="material-post" href="{{ .RelPermalink }}">
-                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (default "02 Jan 2006" $.Site.Params.dateFormat.published) }}</time>
-                        <div><h3>{{ .Title }}</h3><p>{{ .Summary | plainify | truncate 120 }}</p></div>
-                        <span aria-hidden="true">→</span>
-                    </a>
-                {{ end }}
-            </div>
-            {{ partial "pagination.html" . }}
-        </section>
-    </article>
+        </figure>
+        {{ end }}{{ end }}
+        <div class="home-profile__copy"><p class="home-profile__greeting">{{ cond $isChinese "欢迎来到" "Welcome to" }}</p><h1 id="home-profile-title">{{ .Site.Title }}</h1><p class="home-profile__subtitle">{{ .Site.Params.sidebar.subtitle }}</p></div>
+        {{ with .Site.Menus.social }}<ol class="home-profile__social" aria-label="Social links">{{ range . }}<li><a href="{{ .URL }}" target="_blank" rel="noopener" title="{{ .Name }}">{{ partial "helper/icon" .Params.icon }}</a></li>{{ end }}</ol>{{ end }}
+    </section>
+    <section class="home-feature-grid" aria-label="{{ cond $isChinese "主页快捷入口" "Home shortcuts" }}">
+        {{ if gt (len $apps) 0 }}<a href="{{ "apps/" | relLangURL }}" class="home-feature-card home-feature-card--launchpad"><div class="home-feature-card__copy"><p>{{ cond $isChinese "资源导航" "Resource directory" }}</p><h2>{{ cond $isChinese "浏览在线资源" "Browse resources" }}</h2></div><div class="home-launchpad-teaser" aria-hidden="true">{{ range first 2 $apps }}<span class="home-launchpad-teaser__app"><img src="{{ relURL .icon }}" alt="" width="512" height="512" loading="lazy"></span>{{ end }}</div></a>{{ end }}
+        <a href="{{ "about/" | relLangURL }}" class="home-feature-card home-feature-card--resume"><div class="home-feature-card__copy"><p>{{ cond $isChinese "关于 xizhiyun" "About xizhiyun" }}</p><h2>{{ cond $isChinese "了解 xizhiyun" "Meet xizhiyun" }}</h2></div><div class="home-resume-teaser__mark" aria-hidden="true">{{ partial "helper/icon" "user" }}</div></a>
+        <a href="{{ "dashboard/" | relLangURL }}" class="home-feature-card home-feature-card--dashboard"><div class="home-feature-card__copy"><p>{{ cond $isChinese "站点数据" "Site data" }}</p><h2>{{ cond $isChinese "查看站点数据" "View site data" }}</h2></div><div class="home-dashboard-teaser__mark" aria-hidden="true">{{ partial "helper/icon" "dashboard" }}</div></a>
+        {{ if gt (len $pictures) 0 }}<a href="{{ "pictures/" | relLangURL }}" class="home-feature-card home-feature-card--gallery"><div class="home-feature-card__copy"><p>{{ cond $isChinese "照片墙" "Photo wall" }}</p><h2>{{ cond $isChinese "浏览视觉记录" "Browse visual notes" }}</h2></div><div class="home-gallery-teaser__stack" aria-hidden="true">{{ range $i, $picture := first 4 $pictures }}<img src="{{ relURL $picture.image }}" alt="" loading="lazy" style="--gallery-teaser-left: {{ mul $i 36 }}px; --gallery-teaser-mobile-left: {{ mul $i 50 }}px; --gallery-teaser-rotate: {{ sub (mul $i 7) 10 }}deg; --gallery-teaser-hover-rotate: {{ sub (mul $i 4) 6 }}deg;"><!-- generic teaser -->{{ end }}</div></a>{{ end }}
+    </section>
+    <section class="article-list">{{ range $pag.Pages }}{{ partial "article-list/default" . }}{{ end }}</section>{{ partial "pagination.html" . }}{{ partial "footer/footer" . }}
 {{ end }}
+{{ define "right-sidebar" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}{{ end }}
