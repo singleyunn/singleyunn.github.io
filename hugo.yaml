@@ -54,10 +54,6 @@ params:
     license: { enabled: true, default: Licensed under CC BY-SA 4.0 }
   comments:
     enabled: false
-    provider: waline
-    waline:
-      serverURL: https://example.invalid/waline
-      demoMode: true
   widgets:
     homepage:
       - { type: search }

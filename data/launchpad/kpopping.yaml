@@ -8,7 +8,7 @@ category: K-pop database
 categoryZh: K-pop 资料库
 description: A public database for K-pop idols, groups, events, and music.
 descriptionZh: 收录 K-pop 偶像、团体、活动和音乐资料的公开数据库。
-icon: "https://kpopping.com/favicon.ico"
+icon: "https://kpopping.com/favicon-32x32.png"
 iconMode: app
 screenshot: "/img/resource-previews/kpopping.svg"
 screenshotAlt: kpopping database preview
