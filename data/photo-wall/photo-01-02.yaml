@@ -1,7 +1,7 @@
 order: 2
 id: gallery-01-02
 module: ai-image-picks
-image: "/img/gallery/gallery-02.jpg"
+image: "/img/gallery/ai-image-picks/02.jpg"
 title: "AI image study · 02"
 titleZh: "AI 生图作品 · 02"
 description: "A selected AI-generated image from the personal site."

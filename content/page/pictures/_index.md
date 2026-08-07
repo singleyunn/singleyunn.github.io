@@ -2,6 +2,7 @@
 title: Photos
 description: A draggable visual wall powered by editable data files.
 slug: pictures
+url: /pictures/
 layout: pictures
 comments: false
 license: false

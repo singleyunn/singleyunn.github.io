@@ -117,8 +117,8 @@ __SINGLE_LANGUAGE_COLLECTION__
     slug: '{{fields.id}}'
     summary: '{{title}} / {{titleZh}}'
     thumbnail: image
-    media_folder: /static/img/gallery
-    public_folder: /img/gallery
+    media_folder: /static/img/gallery/ai-image-picks
+    public_folder: /img/gallery/ai-image-picks
     reorder:
       key: order
     fields:

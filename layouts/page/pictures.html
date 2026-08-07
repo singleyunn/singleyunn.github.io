@@ -11,6 +11,7 @@
         {{ end }}
     {{ end }}
     {{ $configuredPictures = sort $configuredPictures "order" }}
+
     {{ $modules := slice }}
     {{ with index hugo.Data "photo-modules" }}
         {{ range . }}
@@ -25,11 +26,11 @@
             "nameZh" "照片墙"
             "description" "A collection of visual notes."
             "descriptionZh" "视觉记录合集。"
-            "icon" "/img/gallery/ai-image-picks.svg"
+            "icon" "/img/gallery/ai-image-picks/module-icon.svg"
         ) }}
     {{ end }}
-    {{ $gallery := slice }}
 
+    {{ $gallery := slice }}
     {{ if gt (len $configuredPictures) 0 }}
         {{ range $index, $picture := $configuredPictures }}
             {{ with $picture.image }}
@@ -74,63 +75,129 @@
         {{ end }}
     {{ end }}
 
+    {{ $requestedModule := default "" .Params.photoModule }}
+    {{ $selectedModule := dict }}
+    {{ if $requestedModule }}
+        {{ range $module := $modules }}
+            {{ if eq (index $module "id") $requestedModule }}{{ $selectedModule = $module }}{{ end }}
+        {{ end }}
+    {{ end }}
+
     <article class="main-article pictures-article">
-        {{ if gt (len $gallery) 0 }}
-            {{ range $moduleIndex, $module := $modules }}
-                {{ $modulePictures := where $gallery "ModuleId" (index $module "id") }}
-                {{ if gt (len $modulePictures) 0 }}
-                    {{ $moduleTitle := default (cond $isChinese "照片墙" "Photo wall") (index $module "name") }}
-                    {{ if $isChinese }}
-                        {{ with index $module "nameZh" }}{{ $moduleTitle = . }}{{ end }}
-                    {{ end }}
-                    {{ $moduleDescription := default "" (index $module "description") }}
-                    {{ if $isChinese }}
-                        {{ with index $module "descriptionZh" }}{{ $moduleDescription = . }}{{ end }}
-                    {{ end }}
-                    <section class="photo-module" data-photo-module="{{ index $module "id" }}" aria-labelledby="photo-module-title-{{ $moduleIndex }}">
+        {{ if $requestedModule }}
+            {{ if eq (len $selectedModule) 0 }}
+                <div class="photo-gallery-empty">
+                    {{ cond $isChinese "没有找到这个相册模块。" "This album module could not be found." }}
+                </div>
+            {{ else }}
+                {{ $modulePictures := where $gallery "ModuleId" $requestedModule }}
+                {{ $moduleTitle := default (cond $isChinese "照片墙" "Photo wall") (index $selectedModule "name") }}
+                {{ if $isChinese }}
+                    {{ with index $selectedModule "nameZh" }}{{ $moduleTitle = . }}{{ end }}
+                {{ end }}
+                {{ $moduleDescription := default "" (index $selectedModule "description") }}
+                {{ if $isChinese }}
+                    {{ with index $selectedModule "descriptionZh" }}{{ $moduleDescription = . }}{{ end }}
+                {{ end }}
+                <section class="photo-module-page">
+                    <a class="photo-module__back" href="{{ "pictures/" | relLangURL }}">
+                        {{ partial "helper/icon" "pictures" }}
+                        <span>{{ cond $isChinese "返回相册合集" "Back to album collections" }}</span>
+                    </a>
+                    <section class="photo-module" data-photo-module="{{ $requestedModule }}" aria-labelledby="photo-module-title">
                         <header class="photo-module__header">
-                            {{ with index $module "icon" }}
+                            {{ with index $selectedModule "icon" }}
                                 <img class="photo-module__icon" src="{{ relURL . }}" alt="" width="72" height="72" loading="eager">
                             {{ end }}
                             <div class="photo-module__copy">
-                                <p class="photo-module__eyebrow">{{ cond $isChinese "相册模块" "Album module" }}</p>
-                                <h2 id="photo-module-title-{{ $moduleIndex }}">{{ $moduleTitle }}</h2>
+                                <p class="photo-module__eyebrow">{{ cond $isChinese "相册合集" "Album collection" }}</p>
+                                <h1 id="photo-module-title">{{ $moduleTitle }}</h1>
                                 {{ with $moduleDescription }}<p>{{ . }}</p>{{ end }}
                             </div>
                             <span class="photo-module__count">{{ len $modulePictures }} {{ cond $isChinese "张图片" "images" }}</span>
                         </header>
-                        <section class="photo-gallery" data-photo-gallery aria-label="{{ $moduleTitle }}">
-                            <div class="photo-gallery__backdrop" data-gallery-close hidden></div>
+                        {{ if gt (len $modulePictures) 0 }}
+                            <section class="photo-gallery" data-photo-gallery aria-label="{{ $moduleTitle }}">
+                                <div class="photo-gallery__backdrop" data-gallery-close hidden></div>
 
-                            {{ range $itemIndex, $item := $modulePictures }}
-                                <figure class="photo-gallery__item" data-gallery-item data-gallery-id="{{ printf "%s-%s-%d" (index $module "id") $item.Id $itemIndex }}" style="--gallery-order: {{ $itemIndex }};">
-                                    <div class="photo-gallery__image-frame">
-                                        <img
-                                            src="{{ $item.ImagePermalink }}"
-                                            alt="{{ $item.Title }}"
-                                            loading="{{ cond (lt $itemIndex 6) "eager" "lazy" }}"
-                                            decoding="async"
-                                        >
-                                    </div>
-                                    <figcaption class="photo-gallery__caption">
-                                        {{ if $item.Link }}
-                                            <a href="{{ $item.Link }}">{{ $item.Title }}</a>
-                                        {{ else }}
-                                            <strong>{{ $item.Title }}</strong>
-                                        {{ end }}
-                                        {{ with $item.Date }}<time class="photo-gallery__date" datetime="{{ . }}" data-gallery-date>{{ . }}</time>{{ end }}
-                                        {{ with $item.Description }}<p>{{ . }}</p>{{ end }}
-                                    </figcaption>
-                                </figure>
-                            {{ end }}
-                        </section>
+                                {{ range $itemIndex, $item := $modulePictures }}
+                                    <figure class="photo-gallery__item" data-gallery-item data-gallery-id="{{ printf "%s-%s-%d" $requestedModule $item.Id $itemIndex }}" style="--gallery-order: {{ $itemIndex }};">
+                                        <div class="photo-gallery__image-frame">
+                                            <img
+                                                src="{{ $item.ImagePermalink }}"
+                                                alt="{{ $item.Title }}"
+                                                loading="{{ cond (lt $itemIndex 6) "eager" "lazy" }}"
+                                                decoding="async"
+                                            >
+                                        </div>
+                                        <figcaption class="photo-gallery__caption">
+                                            {{ if $item.Link }}
+                                                <a href="{{ $item.Link }}">{{ $item.Title }}</a>
+                                            {{ else }}
+                                                <strong>{{ $item.Title }}</strong>
+                                            {{ end }}
+                                            {{ with $item.Date }}<time class="photo-gallery__date" datetime="{{ . }}" data-gallery-date>{{ . }}</time>{{ end }}
+                                            {{ with $item.Description }}<p>{{ . }}</p>{{ end }}
+                                        </figcaption>
+                                    </figure>
+                                {{ end }}
+                            </section>
+                        {{ else }}
+                            <div class="photo-gallery-empty">
+                                {{ cond $isChinese "这个合集还没有图片。" "This collection has no images yet." }}
+                            </div>
+                        {{ end }}
                     </section>
-                {{ end }}
+                </section>
             {{ end }}
         {{ else }}
-            <div class="photo-gallery-empty">
-                {{ cond $isChinese "还没有添加照片。" "No photos have been added yet." }}
-            </div>
+            <section class="photo-library-index" aria-labelledby="photo-library-title">
+                <header class="photo-library-header">
+                    <p class="photo-module__eyebrow">{{ cond $isChinese "相册合集" "Album collections" }}</p>
+                    <h1 id="photo-library-title">{{ .Title }}</h1>
+                    <p>{{ .Description }}</p>
+                </header>
+                {{ if gt (len $gallery) 0 }}
+                    <div class="photo-module-grid">
+                        {{ range $module := $modules }}
+                            {{ $modulePictures := where $gallery "ModuleId" (index $module "id") }}
+                            {{ if gt (len $modulePictures) 0 }}
+                                {{ $cover := index $modulePictures 0 }}
+                                {{ $moduleTitle := default (cond $isChinese "照片墙" "Photo wall") (index $module "name") }}
+                                {{ if $isChinese }}
+                                    {{ with index $module "nameZh" }}{{ $moduleTitle = . }}{{ end }}
+                                {{ end }}
+                                {{ $moduleDescription := default "" (index $module "description") }}
+                                {{ if $isChinese }}
+                                    {{ with index $module "descriptionZh" }}{{ $moduleDescription = . }}{{ end }}
+                                {{ end }}
+                                {{ $modulePath := printf "pictures/%s/" (index $module "id") }}
+                                <a class="photo-module-card" href="{{ $modulePath | relLangURL }}">
+                                    <div class="photo-module-card__cover">
+                                        <img src="{{ $cover.ImagePermalink }}" alt="" loading="lazy" decoding="async">
+                                        <span class="photo-module-card__folder">{{ partial "helper/icon" "folder-bookmark" }}</span>
+                                    </div>
+                                    <div class="photo-module-card__body">
+                                        {{ with index $module "icon" }}
+                                            <img class="photo-module-card__icon" src="{{ relURL . }}" alt="" width="48" height="48" loading="lazy">
+                                        {{ end }}
+                                        <div class="photo-module-card__copy">
+                                            <p class="photo-module__eyebrow">{{ cond $isChinese "相册模块" "Album module" }}</p>
+                                            <h2>{{ $moduleTitle }}</h2>
+                                            {{ with $moduleDescription }}<p>{{ . }}</p>{{ end }}
+                                        </div>
+                                        <span class="photo-module-card__count">{{ len $modulePictures }} {{ cond $isChinese "张图片" "images" }}</span>
+                                    </div>
+                                </a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                {{ else }}
+                    <div class="photo-gallery-empty">
+                        {{ cond $isChinese "还没有添加照片合集。" "No photo collections have been added yet." }}
+                    </div>
+                {{ end }}
+            </section>
         {{ end }}
     </article>
 

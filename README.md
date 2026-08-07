@@ -9,7 +9,7 @@
 - 双语内容结构：英文首页与 `/zh/` 中文首页；
 - Liquid Glass 风格个人主页；
 - 在线工具与网站资源导航；
-- 可拖动照片墙；
+- 相册合集首页与独立模块页，模块内为可拖动照片墙；
 - 内容仪表盘；
 - 友链页面与示例申请流程；
 - Sveltia CMS 文件和配置；
@@ -42,7 +42,8 @@ hugo --minify --cleanDestinationDir --ignoreCache
 - `content/post/`：加入或替换自己的文章；
 - `content/page/`：替换关于、链接和其他页面；
 - `data/launchpad/`：替换资源导航条目；
-- `data/photo-wall/` 与 `static/img/gallery/`：替换照片墙；
+- `data/photo-modules.yaml`：配置相册合集名称、图标和说明；
+- `data/photo-wall/` 与 `static/img/gallery/<module-id>/`：替换对应相册模块的图片；
 - `static/img/github.png`：当前个人头像；
 - `hugo.yaml`：站点名称、简介、语言和服务配置。
 
