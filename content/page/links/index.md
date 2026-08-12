@@ -11,11 +11,11 @@ menu:
 links:
   - title: Blog
     description: The Chinese homepage of xizhiyun.
-    website: https://xizhiyun1995-netizen.github.io/zh/
+    website: https://singleyunn.github.io/zh/
     image: /img/github.png
   - title: GitHub
     description: My code repositories and blog source.
-    website: https://github.com/xizhiyun1995-netizen
+    website: https://github.com/singleyunn
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: X
     description: Follow my public updates on X.

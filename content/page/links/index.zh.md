@@ -12,11 +12,11 @@ menu:
 links:
   - title: 博客主页
     description: xizhiyun 的中文主页。
-    website: https://xizhiyun1995-netizen.github.io/zh/
+    website: https://singleyunn.github.io/zh/
     image: /img/github.png
   - title: GitHub
     description: 我的代码仓库与博客源码。
-    website: https://github.com/xizhiyun1995-netizen
+    website: https://github.com/singleyunn
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: X
     description: 在 X 上关注我的公开动态。

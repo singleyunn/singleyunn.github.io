@@ -1,31 +1,39 @@
-# xizhiyun · Liquid Stack 模板
+# SingleYunn Blog（SYB）
 
-这是一个使用 [Liquid Stack](https://github.com/Jingyuan-Zheng/Liquid-Stack) 主题的 Hugo 个人博客模板，部署到 GitHub Pages。
+SingleYunn 的独立个人博客项目，使用 Hugo Extended 与 Liquid Stack 构建，通过 GitHub Actions 发布到 GitHub Pages。
 
-当前公开站点沿用 Liquid Stack 的模块结构，但已替换为“xizhiyun”的文章、资源、照片墙和仪表盘内容；原来的 ChatGPT 订阅教程已移出公开内容，教程源文件和此前提交仍保留在本地备份 / Git 历史中。
+- 本地项目：`D:\syb`
+- 公开站点：<https://singleyunn.github.io/>
+- 源码仓库：<https://github.com/singleyunn/singleyunn.github.io>
+- 默认分支：`main`
 
-## 已接入模块
+## 项目状态
 
-- 双语内容结构：英文首页与 `/zh/` 中文首页；
-- Liquid Glass 风格个人主页；
-- 在线工具与网站资源导航；
-- 相册合集首页与独立模块页，模块内为可拖动照片墙；
-- 内容仪表盘；
-- 友链页面与示例申请流程；
-- Sveltia CMS 文件和配置；
-- 搜索、归档、分类、标签云和站点地图。
+当前站点提供英文首页与 `/zh/` 中文首页，已启用文章、资源导航、相册、搜索、归档、分类、标签、站点地图和内容管理入口。评论功能保留代码但默认关闭。
 
-## CMS 状态
+本项目与其他项目完全隔离：目录、Git 历史、构建产物和维护文档均只属于 `D:\syb`。
 
-`/admin/` 已部署 Sveltia CMS 管理入口，配置使用 GitHub backend，目标仓库为本仓库的 `main` 分支。分类和标签词表位于 `data/taxonomies/`，供 CMS 的关联字段使用。
+## 主要目录
 
-首次使用需要生成并输入一个对该仓库有写入权限的 GitHub Personal Access Token；令牌只保存在当前浏览器的本地存储，不进入仓库。保存会直接提交到 `main`，随后由 GitHub Actions 构建并发布 GitHub Pages。CMS 前端从 `unpkg.com` 加载，普通公开页面不会加载 CMS 编辑器。
+| 路径 | 用途 |
+| --- | --- |
+| `content/` | 双语文章与页面 |
+| `data/` | 资源导航、相册、分类与其他结构化数据 |
+| `static/` | 图片和其他原样发布的静态文件 |
+| `assets/` | Hugo 处理的资源与 CMS 基础配置 |
+| `layouts/` | 项目自定义模板和局部布局 |
+| `themes/stack/` | Liquid Stack 主题 |
+| `.github/workflows/deploy.yml` | GitHub Pages 构建与部署流程 |
+| `hugo.yaml` | Hugo 站点配置 |
+| `agent.md` | 本项目的 AI 协作边界与工作流程 |
 
-首次登录、编辑和提交测试仍需由仓库所有者在自己的 GitHub 账号下完成；在此之前不要把 `/admin/` 当作无认证的公开投稿入口。
-
-评论模块代码保留，但评论功能暂不启用；接入真实 Waline 服务前不要填写服务地址。
+`public/`、`resources/` 和 `.hugo_build.lock` 是本地生成物，已由 `.gitignore` 排除。
 
 ## 本地运行
+
+需要 Hugo Extended。CI 当前固定使用 Hugo `0.164.0`，本地验证宜使用相同版本。
+
+开发预览：
 
 ```bash
 hugo server -D
@@ -37,18 +45,59 @@ hugo server -D
 hugo --minify --cleanDestinationDir --ignoreCache
 ```
 
-## 后续替换内容
+构建输出位于 `public/`。
 
-- `content/post/`：加入或替换自己的文章；
-- `content/page/`：替换关于、链接和其他页面；
-- `data/launchpad/`：替换资源导航条目；
-- `data/photo-modules.yaml`：配置相册合集名称、图标和说明；
-- `data/photo-wall/` 与 `static/img/gallery/<module-id>/`：替换对应相册模块的图片；
-- `static/img/github.png`：当前个人头像；
-- `hugo.yaml`：站点名称、简介、语言和服务配置。
+## 内容维护
 
-## 发布
+- `content/post/`：文章；
+- `content/page/`：关于、链接、隐私等页面；
+- `data/launchpad/`：资源导航；
+- `data/photo-modules.yaml`：相册合集配置；
+- `data/photo-wall/` 与 `static/img/gallery/<module-id>/`：相册数据与图片；
+- `static/img/github.png`：站点头像；
+- `hugo.yaml`：站点名称、简介、语言、菜单和服务配置。
 
-向 `main` 分支 Push 后，GitHub Actions 使用 Hugo Extended 构建并发布到：
+修改公共信息时，应同步检查英文和中文内容。
 
-https://xizhiyun1995-netizen.github.io/
+## CMS
+
+`/admin/` 提供 Sveltia CMS 管理入口，基础配置位于：
+
+```text
+assets/admin/cms-config-base.yml
+```
+
+CMS 使用 GitHub backend，目标仓库为 `singleyunn/singleyunn.github.io` 的 `main` 分支。首次使用需要由仓库所有者在自己的浏览器中提供具备适当权限的 GitHub Token。
+
+Token 只能保存在用户自己的浏览器环境中，不得写入仓库、文档、日志或截图。CMS 保存内容会直接提交到 `main`，随后触发 GitHub Actions 部署。
+
+## 发布流程
+
+1. 在本地完成内容或配置修改；
+2. 运行正式 Hugo 构建；
+3. 检查 `git diff --check`、最终差异和 Git 状态；
+4. 创建清晰的本地 Commit；
+5. 获得明确授权后 Push 到 `main`；
+6. 在 GitHub Actions 中确认 `Deploy to GitHub Pages` 成功；
+7. 打开 <https://singleyunn.github.io/> 验证页面、样式、图片和链接。
+
+仅有本地构建成功不代表线上发布成功，GitHub Actions 和公开页面均属于发布验收证据。
+
+## 地址变更检查
+
+用户名、仓库名或域名发生变化时，至少检查：
+
+- `hugo.yaml` 中的 `baseURL` 和社交链接；
+- `assets/admin/cms-config-base.yml`；
+- About、Links 与 Privacy 双语页面；
+- `data/management_links.yaml`；
+- 页脚链接与本 README；
+- 本地 Git remote；
+- GitHub Actions 与 Pages 页面。
+
+## 安全边界
+
+- 不提交 Token、密码、Cookie、恢复码或私钥；
+- 未经授权不修改 Pages 设置、Secrets 或发布配置；
+- 新增第三方脚本、分析、评论或远程服务前，先评估数据流与隐私影响；
+- 详细协作规则见 [`agent.md`](agent.md)。

@@ -11,7 +11,7 @@ comments: false
 
 ## 适用范围
 
-本政策适用于 **xizhiyun** 公开站点 [xizhiyun1995-netizen.github.io](https://xizhiyun1995-netizen.github.io/) 的页面，以及 `/admin/` CMS 管理入口。
+本政策适用于 **xizhiyun** 公开站点 [singleyunn.github.io](https://singleyunn.github.io/) 的页面，以及 `/admin/` CMS 管理入口。
 
 本站是通过 GitHub Pages 发布的静态 Hugo 网站。以下内容是对当前配置的实际说明，并不承诺未来接入服务后仍完全相同。如果以后启用统计、评论、表单、订阅、广告、支付或其他第三方服务，应先更新本政策。
 
@@ -54,4 +54,4 @@ CMS 是管理工具，不是面向公众的投稿表单。使用者需要从拥�
 
 ## 联系方式
 
-如需反馈站点问题或公开内容错误，可在[源码仓库](https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io)提交 Issue 或 Discussion。请不要在那里发布账号凭据或敏感个人信息。
+如需反馈站点问题或公开内容错误，可在[源码仓库](https://github.com/singleyunn/singleyunn.github.io)提交 Issue 或 Discussion。请不要在那里发布账号凭据或敏感个人信息。

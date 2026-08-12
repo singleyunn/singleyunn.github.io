@@ -7,19 +7,19 @@
 - id: github-actions
   title: GitHub Actions
   titleZh: GitHub Actions
-  url: https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io/actions
+  url: https://github.com/singleyunn/singleyunn.github.io/actions
   icon: brand-github
   external: true
 - id: github-pages
   title: GitHub Pages settings
   titleZh: GitHub Pages 设置
-  url: https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io/settings/pages
+  url: https://github.com/singleyunn/singleyunn.github.io/settings/pages
   icon: code
   external: true
   groupStart: true
 - id: repository
   title: Source repository
   titleZh: 源码仓库
-  url: https://github.com/xizhiyun1995-netizen/xizhiyun1995-netizen.github.io
+  url: https://github.com/singleyunn/singleyunn.github.io
   icon: brand-github
   external: true
